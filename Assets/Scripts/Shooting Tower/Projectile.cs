@@ -10,16 +10,25 @@ public class Projectile : MonoBehaviour
 
     private Tween _moveTween;
 
-    public void Launch(Transform target)
+    private ColorCube _target;
+
+    public void Launch(ColorCube target)
     {
+        _target = target;
         _moveTween?.Kill();
         
-        float duration = Vector3.Distance(transform.position, target.position) / speed;
-        _moveTween = transform.DOMove(target.position, duration)
+        float duration = Vector3.Distance(transform.position, target.transform.position) / speed;
+        _moveTween = transform.DOMove(target.transform.position, duration)
             .SetEase(Ease.Linear)
-            .OnComplete(ReturnToPool);
+            .OnComplete(OnReachedTarget);
         
-        Invoke(nameof(ReturnToPool), lifeTime);
+        //Invoke(nameof(ReturnToPool), lifeTime);
+    }
+
+    private void OnReachedTarget()
+    {
+        _target.DestroyCube();
+        ReturnToPool();
     }
 
     private void ReturnToPool()

@@ -9,13 +9,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Ease ease;
     
     private Tween _moveTween;
-    private PlayerController _playerController;
     private Player _player;
 
     private void Awake()
     {
         _player = GetComponent<Player>();
-        _playerController = GetComponent<PlayerController>();
     }
     
     public void MoveToShootSpot(Transform target)

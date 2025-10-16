@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform shootSpot;
 
     private PlayerMovement _movement;
-    private PlayerShooter _shooter;
-    private PlayerMerger _merger;
     private Player _player;
 
     private Camera _mainCamera;
@@ -31,8 +29,6 @@ public class PlayerController : MonoBehaviour
         
         _player = GetComponent<Player>();
         _movement = GetComponent<PlayerMovement>();
-        _shooter = GetComponent<PlayerShooter>();
-        _merger = GetComponent<PlayerMerger>();
     }
     
     private void Update()

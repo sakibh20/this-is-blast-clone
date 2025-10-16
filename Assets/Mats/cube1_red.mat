@@ -182,7 +182,7 @@ Material:
     - _SpecSmooth: 1
     - _SpecularHighlights: 1
     - _SpecularMapType: 0
-    - _SpecularRoughness: 0.25
+    - _SpecularRoughness: 0.15
     - _SpecularToonSize: 0.25
     - _SpecularToonSmoothness: 0.05
     - _SpecularType: 0
@@ -228,6 +228,6 @@ Material:
     - _RimColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.5}
     - _SColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _ScanlinesTex_SC: {r: 1, g: 1, b: 0, a: 0}
-    - _SpecularColor: {r: 2, g: 2, b: 2, a: 1}
+    - _SpecularColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

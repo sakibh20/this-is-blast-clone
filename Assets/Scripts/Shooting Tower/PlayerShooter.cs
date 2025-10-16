@@ -1,15 +1,20 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
 public class PlayerShooter : MonoBehaviour
 {
     [SerializeField] private float shootRate = 0.5f;
-    [SerializeField] private Transform target;
     [SerializeField] private ObjectPool projectilePool;
     
+    [SerializeField] private float recoilStrength = 0.1f;
+    [SerializeField] private float recoilDuration = 0.1f;
+    [SerializeField] private float rotationThreshold = 20f;
+    
     [SerializeField] private Transform shootPos;
-    private bool _isShooting;
     
     private Player _player;
     
@@ -20,48 +25,66 @@ public class PlayerShooter : MonoBehaviour
 
     private void Start()
     {
-        CurrentStateChanged();
+        
     }
 
     private void OnDisable()
     {
-        GameEventManager.RemoveListener(Player.CurrentStateUpdateEvent, StartShooting);
+        CancelInvoke();
         StopShooting();
     }
 
-    private void CurrentStateChanged()
+    public void OnReadyToShoot()
     {
-        GameEventManager.AddListener(Player.CurrentStateUpdateEvent, StartShooting);
-    }
-    
-    private void StartShooting(GameEventModel model)
-    {
-        if(_player.CurrentState != PlayerState.ReadyToShoot) return;
-        if (_isShooting) return;
-        
         _player.CurrentState = PlayerState.Shooting;
-        Debug.Log("Started shooting!");
         
-        _isShooting = true;
-        StartCoroutine(ShootRoutine());
+        CheckAndShoot();
+    }
+
+    private void CheckAndShoot()
+    {
+        int targetCount = _player.AmmoCount >= 5 ? 5 : _player.AmmoCount;
+            
+        List<ColorCube> allTargets = CubeManager.Instance.GetFrontCubes(_player.Color, targetCount);
+        StartShooting(allTargets);
+        
+        // if (allTargets.Count > 0)
+        // {
+        //     StartShooting(allTargets);
+        // }
+        // else
+        // {
+        //     Invoke(nameof(CheckAndShoot), 0.1f);
+        //     return;
+        // }
+    }
+
+    private void StartShooting(List<ColorCube> allTargets)
+    {
+        //Debug.Log("Started shooting!");
+
+        StartCoroutine(ShootRoutine(allTargets, CheckAndShoot));
     }
 
     private void StopShooting()
     {
-        _isShooting = false;
         StopAllCoroutines();
     }
-
-    private IEnumerator ShootRoutine()
+    
+    private IEnumerator ShootRoutine(List<ColorCube> allTargets, Action onComplete)
     {
-        while (_isShooting)
+        foreach (ColorCube cube in allTargets)
         {
-            Shoot();
+            Shoot(cube);
             yield return new WaitForSeconds(shootRate);
         }
+        if(allTargets.Count == 0)
+            yield return new WaitForSeconds(shootRate);
+        
+        onComplete?.Invoke();
     }
 
-    private void Shoot()
+    private void Shoot(ColorCube target)
     {
         if (_player == null)
         {
@@ -76,7 +99,40 @@ public class PlayerShooter : MonoBehaviour
             StopShooting();
             return;
         }
+        
+        Vector3 direction = target.transform.position - transform.position;
+        direction.y = 0f; // keep rotation only on Y axis
 
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+        float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
+
+        float rotationDuration = shootRate * 0.3f;
+
+        // if (angleDifference > rotationThreshold)
+        // {
+            // Rotate towards target
+            transform.DORotateQuaternion(targetRotation, rotationDuration)
+                .SetEase(Ease.OutQuad)
+                .OnComplete(() =>
+                {
+                    HandleShoot(target);
+                });
+        // }
+        // else
+        // {
+        //     HandleShoot(target);
+        // }
+    }
+
+    private void HandleShoot(ColorCube target)
+    {
+        SpawnProjectile(target);
+        DoRecoilFeedback(target, recoilDuration / 2f);
+    }
+    
+    private void SpawnProjectile(ColorCube target)
+    {
         Projectile projectileObj = projectilePool.GetPooledObject();
         projectileObj.transform.position = shootPos.position;
         projectileObj.gameObject.SetActive(true);
@@ -84,5 +140,13 @@ public class PlayerShooter : MonoBehaviour
         projectileObj.Launch(target);
 
         _player.UpdateAmmoCount(1);
+    }
+
+    private void DoRecoilFeedback(ColorCube target, float duration)
+    {
+        transform.DOKill();
+
+        Vector3 recoilDir = -target.transform.forward * recoilStrength;
+        transform.DOPunchPosition(recoilDir, duration, vibrato: 5, elasticity: 0.6f);
     }
 }
