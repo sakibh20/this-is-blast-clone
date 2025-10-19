@@ -5,6 +5,9 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
+    [Header("Script References")] 
+    [SerializeField] private UIManager uiManager;
+    
     [Header("Level Setup")]
     [SerializeField] private List<GameObject> levelPrefabs = new List<GameObject>();
     [SerializeField] private Transform levelRoot;
@@ -32,6 +35,9 @@ public class LevelManager : MonoBehaviour
             Destroy(this);
             return;
         }
+
+        uiManager.ShowGameUi();
+        
         LoadLevelIndex();
         SpawnCurrentLevel();
         UpdateLevelText();
@@ -104,9 +110,12 @@ public class LevelManager : MonoBehaviour
 
         PlayerPrefs.SetInt(levelPrefKey, _currentLevelIndex);
         PlayerPrefs.Save();
+        
+        //levelCompleteUI.PlayLevelCompleteSequence(0.25f);
+        uiManager.ShowLevelCompleteUI();
 
-        SpawnCurrentLevel();
-        UpdateLevelText();
-        ResetProgressBar();
+        // SpawnCurrentLevel();
+        // UpdateLevelText();
+        // ResetProgressBar();
     }
 }
