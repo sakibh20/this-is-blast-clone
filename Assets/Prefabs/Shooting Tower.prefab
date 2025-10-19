@@ -327,7 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRate: 0.05
   projectilePool: {fileID: 0}
-  recoilStrength: 0.03
+  recoilStrength: 0.02
   recoilDuration: 0.07
   rotationThreshold: 20
   shootPos: {fileID: 3063971788009943558}

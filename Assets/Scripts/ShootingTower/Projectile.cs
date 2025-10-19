@@ -4,13 +4,14 @@ using DG.Tweening;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
-    [SerializeField] private float lifeTime = 2f;
+    //[SerializeField] private float lifeTime = 2f;
 
     [HideInInspector] public ObjectPool objectPool;
 
     private Tween _moveTween;
 
     private ColorCube _target;
+    public ColorCube TargetCube => _target;
 
     public void Launch(ColorCube target)
     {
@@ -18,7 +19,7 @@ public class Projectile : MonoBehaviour
         _moveTween?.Kill();
         
         float duration = Vector3.Distance(transform.position, target.transform.position) / speed;
-        _moveTween = transform.DOMove(target.transform.position, duration)
+        _moveTween = transform.DOMove(target.transform.position - new Vector3(0,0,0.4f), duration)
             .SetEase(Ease.Linear)
             .OnComplete(OnReachedTarget);
         

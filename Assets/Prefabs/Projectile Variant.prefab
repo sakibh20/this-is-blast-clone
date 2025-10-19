@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8967250132498626795, guid: 9ed3251b488a46347ac754b2361d98d5, type: 3}
+      propertyPath: m_TagString
+      value: projectile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -118,5 +122,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}

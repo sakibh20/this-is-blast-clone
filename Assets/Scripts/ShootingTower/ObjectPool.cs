@@ -9,8 +9,17 @@ public class ObjectPool : MonoBehaviour
 
     private readonly List<Projectile> _pool = new List<Projectile>();
 
+    public static ObjectPool Instance;
+
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
         for (int i = 0; i < poolSize; i++)
         {
             GenerateItem();

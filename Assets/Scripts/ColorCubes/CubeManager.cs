@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
@@ -7,9 +8,12 @@ public class CubeManager : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private Transform levelRoot;
+    //[SerializeField] private float forwardDuration = 0.2f;
 
     [Header("Output")]
     [SerializeField] private List<CubeColumn> allColumns = new List<CubeColumn>();
+
+    private int _totalCube;
 
     public static CubeManager Instance;
     private void Awake()
@@ -23,7 +27,10 @@ public class CubeManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
+    }
+
+    private void Start()
+    {
         PopulateColumns();
     }
 
@@ -39,6 +46,8 @@ public class CubeManager : MonoBehaviour
             if (colorCube == null)
                 continue;
 
+            _totalCube += 1;
+            
             float xPos = child.position.x;
 
             if (!columnMap.ContainsKey(xPos))
@@ -56,6 +65,8 @@ public class CubeManager : MonoBehaviour
 
         // Optional: sort columns by X for consistent left-to-right order
         allColumns = allColumns.OrderBy(col => col.cubes[0].transform.position.x).ToList();
+        
+        LevelManager.Instance.SetTotalCubes(_totalCube);
     }
     
     // public List<ColorCube> GetFrontCubes(CubeColors shooterColor, int targetCount, Vector3 position)
@@ -126,7 +137,7 @@ public class CubeColumn
             {
                 var cube = cubes[i];
                 float newZ = cubes[i - 1].transform.position.z;
-                cube.transform.DOMoveZ(newZ, 0.3f).SetEase(Ease.OutSine);
+                cube.MoveForwardWithDelay(newZ);
             }
         }
 
