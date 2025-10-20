@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveToShootSpot(Transform target)
     {
+        SoundManager.Instance.PlayShooterPopSound();
         _player.CurrentState = PlayerState.Moving;
 
         _moveTween?.Kill();

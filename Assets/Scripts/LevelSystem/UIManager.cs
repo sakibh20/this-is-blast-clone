@@ -80,6 +80,7 @@ public class UIManager : MonoBehaviour
     public void ShowLevelCompleteUI(int level)
     { 
         levelText.SetText("Level " + (level+1));
+        SoundManager.Instance.PlayWinSound();
         
         FadeInMainPanel();
         AnimateVictoryText();
@@ -207,6 +208,7 @@ public class UIManager : MonoBehaviour
 
         DOTween.To(() => startValue, x =>
             {
+                SoundManager.Instance.PlayCoinSound();
                 startValue = x;
                 hudCoinText.text = startValue.ToString();
             }, endValue, coinCountTweenDuration)

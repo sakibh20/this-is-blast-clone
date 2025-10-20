@@ -90,6 +90,8 @@ public class ColorCube : MonoBehaviour
         CubeManager.Instance.OnCubeDestroyed(this);
         LevelManager.Instance.UpdateProgress();
         
+        SoundManager.Instance.PlayPopSound();
+        
         transform.DOScale(Vector3.zero, _hideDuration).OnComplete(() =>
         {
             Destroy(gameObject);

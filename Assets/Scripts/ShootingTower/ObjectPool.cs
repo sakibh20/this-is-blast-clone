@@ -49,6 +49,7 @@ public class ObjectPool : MonoBehaviour
     
     public void ReturnToPool(Projectile projectile)
     {
+        projectile.transform.localPosition = Vector3.zero;
         projectile.gameObject.SetActive(false);
     }
 }
