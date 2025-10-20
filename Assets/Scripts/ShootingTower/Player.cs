@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private MoveQueue moveQueue;
+    
     [SerializeField] private PlayerState currentState = PlayerState.ReadyToMove;
 
     [SerializeField] private int ammoCount;
@@ -18,6 +20,12 @@ public class Player : MonoBehaviour
     
     private PlayerShooter _shooter;
     private PlayerMerger _merger;
+    private PlayerMovement _playMovement;
+    private Doc _targetDoc;
+    
+    private Camera _mainCamera;
+    public PlayerMovement PlayerMovement => _playMovement;
+    public Doc TargetDoc => _targetDoc;
     
     public PlayerState CurrentState
     {
@@ -33,6 +41,39 @@ public class Player : MonoBehaviour
     {
         _shooter = GetComponent<PlayerShooter>();
         _merger = GetComponent<PlayerMerger>();
+        _playMovement = GetComponent<PlayerMovement>();
+        _mainCamera = Camera.main;
+    }
+    
+    
+    private void Update()
+    {
+        HandleClickDetection();
+    }
+
+    private void HandleClickDetection()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                if (hit.transform == transform)
+                {
+                    OnPlayerClicked();
+                }
+            }
+        }
+    }
+    
+    private void OnPlayerClicked()
+    {
+        moveQueue.OnPlayerClicked(GetComponent<PlayerShooter>());
+    }
+    
+    public void SetTargetDoc(Doc doc)
+    {
+        _targetDoc = doc;
     }
 
     public void UpdateAmmoCount(int count = 0)
@@ -60,4 +101,17 @@ public class Player : MonoBehaviour
             _shooter.OnReadyToShoot();
         }
     }
+}
+
+
+public enum PlayerState
+{
+    Undefined,
+    ReadyToMove,
+    Moving,
+    ReadyToShoot,
+    Shooting,
+    Merging,
+    NoAmmo,
+    GoingOut
 }

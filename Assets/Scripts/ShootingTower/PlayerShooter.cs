@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
 public class PlayerShooter : MonoBehaviour
 {
     [SerializeField] private float shootRate = 0.5f;
@@ -19,6 +18,7 @@ public class PlayerShooter : MonoBehaviour
     private float _rotationDuration = 0.2f;
     
     private Player _player;
+    public Player Player => _player;
     private PlayerMovement _playerMovement;
     
     private void Awake()

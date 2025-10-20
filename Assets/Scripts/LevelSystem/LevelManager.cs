@@ -18,9 +18,13 @@ public class LevelManager : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private string levelPrefKey = "CurrentLevel";
+
+    [SerializeField] private bool test;
+    [SerializeField] private int testLevel;
     
     private int _currentLevelIndex;
-    [SerializeField] private GameObject _currentLevelInstance;
+    
+    private GameObject _currentLevelInstance;
     
     private int _totalCubes;
     private int _destroyedCubes;
@@ -41,6 +45,12 @@ public class LevelManager : MonoBehaviour
 
     private void LoadLevelIndex()
     {
+        if (test)
+        {
+            _currentLevelIndex = testLevel;
+            return;
+        }
+        
         _currentLevelIndex = PlayerPrefs.GetInt(levelPrefKey, 0);
         _currentLevelIndex = Mathf.Clamp(_currentLevelIndex, 0, levelPrefabs.Count - 1);
     }

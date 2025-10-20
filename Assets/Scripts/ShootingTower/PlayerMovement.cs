@@ -1,7 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("References")] [SerializeField]
@@ -43,6 +42,26 @@ public class PlayerMovement : MonoBehaviour
             .SetEase(Ease.OutQuad)
             .OnComplete(OnReachedShootSpot);
     }
+    
+    public void MoveForward(Vector3 targetPos)
+    {
+        //SoundManager.Instance.PlayShooterPopSound();
+        _player.CurrentState = PlayerState.Moving;
+
+        _moveTween?.Kill();
+        // _moveTween = transform.DOMove(target.position, moveDuration)
+        //     .SetEase(ease)
+        //     .OnComplete(OnReachedShootSpot);        
+
+        _moveTween = transform.DOJump(
+                targetPos,
+                0.3f,
+                1,
+                moveDuration
+            )
+            .SetDelay(0.2f)
+            .SetEase(Ease.OutQuad);
+    }
 
     public void MoveOut()
     {
@@ -63,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
             .SetEase(Ease.OutQuad)
             .OnComplete(() =>
             {
+                _player.TargetDoc.ReleaseDoc();
                 // 3️⃣ Jump move to target with multiple jumps
                 Sequence moveSeq = DOTween.Sequence();
 
