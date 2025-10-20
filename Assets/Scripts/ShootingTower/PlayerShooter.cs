@@ -12,17 +12,19 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private float recoilStrength = 0.1f;
     [SerializeField] private float recoilDuration = 0.1f;
     
-    [SerializeField] private float _resetRotationDuration = 3f;
+    [SerializeField] private float resetRotationDuration = 3f;
     
     [SerializeField] private Transform shootPos;
     
     private float _rotationDuration = 0.2f;
     
     private Player _player;
+    private PlayerMovement _playerMovement;
     
     private void Awake()
     {
         _player = GetComponent<Player>();
+        _playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void OnDestroy()
@@ -63,7 +65,7 @@ public class PlayerShooter : MonoBehaviour
 
         Quaternion resetRotation = Quaternion.identity;
 
-        transform.DORotateQuaternion(resetRotation, _resetRotationDuration)
+        transform.DORotateQuaternion(resetRotation, resetRotationDuration)
             .SetEase(Ease.OutQuad)
             .SetId("playerRotation");
     }
@@ -93,13 +95,7 @@ public class PlayerShooter : MonoBehaviour
             return;
         }
 
-        if (_player.AmmoCount <= 0)
-        {
-            Debug.Log("Out of ammo!");
-            
-            StopShooting();
-            return;
-        }
+        if (_player.AmmoCount <= 0) return;
         
         HandleShoot(target);
     }
@@ -149,5 +145,13 @@ public class PlayerShooter : MonoBehaviour
         projectileObj.Launch(target);
 
         _player.UpdateAmmoCount(1);
+        
+        if (_player.AmmoCount <= 0)
+        {
+            Debug.Log("Out of ammo!");
+            _playerMovement.MoveOut();
+            StopShooting();
+            return;
+        }
     }
 }

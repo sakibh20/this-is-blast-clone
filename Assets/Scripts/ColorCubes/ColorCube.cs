@@ -9,7 +9,7 @@ public class ColorCube : MonoBehaviour
     
     private float _wobbleStrengthPos = 0.15f;
     private float _wobbleStrengthRot = 15;
-    private float _wobbleDuration = 0.25f;
+    private float _wobbleDuration = 0.15f;
 
     private Collider _collider;
     
@@ -105,7 +105,7 @@ public class ColorCube : MonoBehaviour
                 // Small position wobble
                 Vector3 wobbleDir = transform.forward * 0.1f;
                 transform.DOPunchPosition(-wobbleDir, 0.15f, vibrato: 2, elasticity: 0.5f)
-                    .SetEase(Ease.OutQuad)
+                    .SetEase(Ease.OutBounce)
                     .SetId("cubeMoveWobble");
             }).SetDelay(_hideDuration);
         
