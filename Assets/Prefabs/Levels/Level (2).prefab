@@ -278,7 +278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   docTransform: {fileID: 7864173345283789175}
-  isReserved: 0
 --- !u!1 &4317311941283029836
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   docTransform: {fileID: 4108307425733196539}
-  isReserved: 0
 --- !u!1 &4550074559399079288
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +559,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   docTransform: {fileID: 210157289272541948}
-  isReserved: 0
 --- !u!1 &6898280122004702754
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   docTransform: {fileID: 6670437709017934332}
-  isReserved: 0
 --- !u!1 &7061323263068084948
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,7 +808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   docTransform: {fileID: 6286917244158232000}
-  isReserved: 0
 --- !u!1001 &92685992652092682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1253,6 +1248,10 @@ PrefabInstance:
       propertyPath: moveQueue
       value: 
       objectReference: {fileID: 3423761138674995565}
+    - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
+      propertyPath: docManager
+      value: 
+      objectReference: {fileID: 4673878848415850617}
     - target: {fileID: 3696841293914888513, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
       propertyPath: shootSpot
       value: 
@@ -3237,6 +3236,10 @@ PrefabInstance:
       propertyPath: cubeColors
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
+      propertyPath: docManager
+      value: 
+      objectReference: {fileID: 4673878848415850617}
     - target: {fileID: 3696841293914888513, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
       propertyPath: moveQueue
       value: 
@@ -6268,6 +6271,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
+      propertyPath: docManager
+      value: 
+      objectReference: {fileID: 4673878848415850617}
+    - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
       propertyPath: currentState
       value: 0
       objectReference: {fileID: 0}
@@ -7213,6 +7220,10 @@ PrefabInstance:
       propertyPath: cubeColors
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
+      propertyPath: docManager
+      value: 
+      objectReference: {fileID: 4673878848415850617}
     - target: {fileID: 3696841293914888513, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
       propertyPath: shootSpot
       value: 
@@ -8872,6 +8883,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
+      propertyPath: docManager
+      value: 
+      objectReference: {fileID: 4673878848415850617}
+    - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
       propertyPath: currentState
       value: 0
       objectReference: {fileID: 0}
@@ -9063,6 +9078,10 @@ PrefabInstance:
       propertyPath: cubeColors
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
+      propertyPath: docManager
+      value: 
+      objectReference: {fileID: 4673878848415850617}
     - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
       propertyPath: currentState
       value: 0

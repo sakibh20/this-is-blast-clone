@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private MoveQueue moveQueue;
+    [SerializeField] private DocManager docManager;
     
     [SerializeField] private PlayerState currentState = PlayerState.ReadyToMove;
 
@@ -19,12 +20,15 @@ public class Player : MonoBehaviour
     public CubeColors Color => cubeColors;
     
     private PlayerShooter _shooter;
-    private PlayerMerger _merger;
     private PlayerMovement _playMovement;
     private Doc _targetDoc;
     
     private Camera _mainCamera;
     public PlayerMovement PlayerMovement => _playMovement;
+    public PlayerShooter Shooter => _shooter;
+    
+    private MergeManager _mergeManager;
+    public MergeManager MergeManager => _mergeManager;
     public Doc TargetDoc => _targetDoc;
     
     public PlayerState CurrentState
@@ -40,9 +44,11 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _shooter = GetComponent<PlayerShooter>();
-        _merger = GetComponent<PlayerMerger>();
         _playMovement = GetComponent<PlayerMovement>();
         _mainCamera = Camera.main;
+
+        _mergeManager = FindFirstObjectByType<MergeManager>();
+        _mergeManager.docManager = docManager;
     }
     
     
@@ -78,7 +84,7 @@ public class Player : MonoBehaviour
 
     public void UpdateAmmoCount(int count = 0)
     {
-        ammoCount -= count;
+        ammoCount += count;
         
         ammoText.SetText(ammoCount.ToString());
     }
@@ -99,6 +105,10 @@ public class Player : MonoBehaviour
         if (currentState == PlayerState.ReadyToShoot)
         {
             _shooter.OnReadyToShoot();
+        }
+        if (currentState == PlayerState.Merging)
+        {
+            _shooter.StopShooting();
         }
     }
 }

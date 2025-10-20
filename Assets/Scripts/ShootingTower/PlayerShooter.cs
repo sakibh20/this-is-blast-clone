@@ -20,6 +20,8 @@ public class PlayerShooter : MonoBehaviour
     private Player _player;
     public Player Player => _player;
     private PlayerMovement _playerMovement;
+
+    private List<ColorCube> _allTargets = new List<ColorCube>();
     
     private void Awake()
     {
@@ -45,11 +47,11 @@ public class PlayerShooter : MonoBehaviour
     {
         int targetCount = _player.AmmoCount >= 5 ? 5 : _player.AmmoCount;
             
-        List<ColorCube> allTargets = CubeManager.Instance.GetFrontCubes(_player.Color, targetCount);
+        _allTargets = CubeManager.Instance.GetFrontCubes(_player.Color, targetCount);
         
-        if (allTargets.Count > 0)
+        if (_allTargets.Count > 0)
         {
-            StartCoroutine(ShootRoutine(allTargets, CheckAndShoot));
+            StartCoroutine(ShootRoutine(CheckAndShoot));
         }
         else
         {
@@ -70,15 +72,26 @@ public class PlayerShooter : MonoBehaviour
             .SetId("playerRotation");
     }
 
-    private void StopShooting()
+    public void StopShooting()
     {
         StopAllCoroutines();
+        transform.DOKill();
+    }
+
+    public void Release()
+    {
+        foreach (var target in _allTargets)
+        {
+            target.IsReserved = false;
+        }
+        
+        _allTargets.Clear();
     }
     
-    private IEnumerator ShootRoutine(List<ColorCube> allTargets, Action onComplete)
+    private IEnumerator ShootRoutine(Action onComplete)
     {
         //Debug.Log("ShootRoutine");
-        foreach (ColorCube cube in allTargets)
+        foreach (ColorCube cube in _allTargets)
         {
             Shoot(cube);
             yield return new WaitForSeconds(shootRate);
@@ -144,13 +157,13 @@ public class PlayerShooter : MonoBehaviour
 
         projectileObj.Launch(target);
 
-        _player.UpdateAmmoCount(1);
+        _player.UpdateAmmoCount(-1);
         
         if (_player.AmmoCount <= 0)
         {
+            StopShooting();
             Debug.Log("Out of ammo!");
             _playerMovement.MoveOut();
-            StopShooting();
             return;
         }
     }

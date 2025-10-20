@@ -218,7 +218,6 @@ GameObject:
   - component: {fileID: 8989918791802989388}
   - component: {fileID: 626845004245090545}
   - component: {fileID: 2861839722562445153}
-  - component: {fileID: 3696841293914888513}
   - component: {fileID: 8034664472600220290}
   - component: {fileID: 8022349180434501737}
   m_Layer: 0
@@ -279,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4370d2941dd6fb844bf1c060be7e42e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveQueue: {fileID: 0}
   currentState: 1
   ammoCount: 60
   cubeColors: 0
@@ -286,19 +286,6 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 824994500320429628}
   - {fileID: 30422470566791960}
---- !u!114 &3696841293914888513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2775327775753815078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f94c70aa95b4b64ca2aa9f208fe2f37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootSpot: {fileID: 0}
 --- !u!114 &8034664472600220290
 MonoBehaviour:
   m_ObjectHideFlags: 0

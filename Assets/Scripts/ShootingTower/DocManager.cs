@@ -4,15 +4,16 @@ using UnityEngine;
 public class DocManager : MonoBehaviour
 {
     [SerializeField] private List<Doc> allDocs = new List<Doc>();
+
+    public List<Doc> AllDocs => allDocs;
     
     public Doc GetTargetDoc()
     {
         for (int i = 0; i < allDocs.Count; i++)
         {
             Doc doc = allDocs[i];
-            if (!doc.isReserved)
+            if (!doc.IsReserved)
             {
-                doc.isReserved = true;
                 return doc;
             }
         }
@@ -30,6 +31,6 @@ public class DocManager : MonoBehaviour
     public void ResetAllDocs()
     {
         foreach (Doc d in allDocs)
-            d.isReserved = false;
+            d.ReleaseDoc();
     }
 }

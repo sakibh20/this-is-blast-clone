@@ -105,8 +105,10 @@ public class PlayerMovement : MonoBehaviour
             });
     }
 
+    [ContextMenu("OnReachedShootSpot")]
     private void OnReachedShootSpot()
     {
+        _player.MergeManager.CheckForMerge();
         Debug.Log("OnReachedShootSpot!");
         _player.CurrentState = PlayerState.ReadyToShoot;
     }

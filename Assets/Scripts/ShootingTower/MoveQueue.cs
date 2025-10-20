@@ -29,11 +29,11 @@ public class MoveQueue : MonoBehaviour
             return;
         }
 
-        targetDoc.isReserved = true;
+        targetDoc.ReserveDoc(clickedPlayer.Player);
         
         clickedPlayer.Player.SetTargetDoc(targetDoc); 
         
-        clickedPlayer.Player.PlayerMovement.MoveToShootSpot(targetDoc.docTransform);
+        clickedPlayer.Player.PlayerMovement.MoveToShootSpot(targetDoc.DocTransform);
 
         queue.playerQueue.Remove(clickedPlayer);
 

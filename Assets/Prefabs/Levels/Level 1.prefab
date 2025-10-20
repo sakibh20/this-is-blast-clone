@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   docTransform: {fileID: 5583287723175949656}
-  isReserved: 0
 --- !u!1 &373675467306593264
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   docTransform: {fileID: 6392808532703071439}
-  isReserved: 0
 --- !u!1 &2148869675653079961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1865,10 @@ PrefabInstance:
       propertyPath: cubeColors
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
+      propertyPath: docManager
+      value: 
+      objectReference: {fileID: 860339906041370128}
     - target: {fileID: 3696841293914888513, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
       propertyPath: moveQueue
       value: 
@@ -6935,6 +6937,10 @@ PrefabInstance:
       propertyPath: moveQueue
       value: 
       objectReference: {fileID: 369802615732582367}
+    - target: {fileID: 2861839722562445153, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
+      propertyPath: docManager
+      value: 
+      objectReference: {fileID: 860339906041370128}
     - target: {fileID: 3696841293914888513, guid: 1e9d9e3c27d9418479ff3b19904de09d, type: 3}
       propertyPath: moveQueue
       value: 
