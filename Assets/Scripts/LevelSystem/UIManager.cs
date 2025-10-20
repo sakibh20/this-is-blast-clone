@@ -10,6 +10,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject levelProgress;
     
+    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private GameObject youWinText;
+    [SerializeField] private GameObject coinCount;
+    [SerializeField] private RectTransform buttons;
+    
     [Header("Main Elements")]
     [SerializeField] private CanvasGroup mainPanel;
     [SerializeField] private RectTransform victoryText;
@@ -23,8 +28,6 @@ public class UIManager : MonoBehaviour
 
     [Header("Tween Settings")]
     [SerializeField] private float fadeDuration = 0.3f;
-    [SerializeField] private float scaleInDuration = 0.4f;
-    [SerializeField] private float slideUpDuration = 0.4f;
     [SerializeField] private float slideInDuration = 0.5f;
     [SerializeField] private float coinTweenDelay = 0.1f;
     [SerializeField] private float coinMoveDuration = 0.8f;
@@ -57,22 +60,27 @@ public class UIManager : MonoBehaviour
         
         settings.gameObject.SetActive(true);
         levelProgress.gameObject.SetActive(true);
+        buttons.localScale = Vector3.zero;
     }
 
     #region Main Animations
 
     [ContextMenu("ShowLevelCompleteUI")]
-    public void ShowLevelCompleteUI()
-    {
+    public void ShowLevelCompleteUI(int level)
+    { 
+        levelText.SetText("Level " + (level+1));
+        
         FadeInMainPanel();
         AnimateVictoryText();
         AnimateNextFeaturePanel();
-        AnimateCoinsToHUD();
+        Invoke(nameof(AnimateCoinsToHUD), 1.0f);
     }
 
     [ContextMenu("FadeInMainPanel")]
     private void FadeInMainPanel()
     {
+        ResetCoins();
+        
         settings.gameObject.SetActive(false);
         levelProgress.gameObject.SetActive(false);
         
@@ -88,22 +96,28 @@ public class UIManager : MonoBehaviour
         mainPanel.interactable = false;
         mainPanel.blocksRaycasts = false;
         mainPanel.DOFade(0f, fadeDuration).SetEase(Ease.OutQuad);
+        
+        youWinText.SetActive(false);
+        coinCount.SetActive(false);
+        
+        buttons.localScale = Vector3.one;
     }
 
     [ContextMenu("AnimateVictoryText")]
     private void AnimateVictoryText()
     {
-        Vector3 targetScale = victoryText.localScale;
         victoryText.localScale = Vector3.zero;
 
         // Slightly lower start pos
         Vector3 targetPos = victoryText.anchoredPosition;
-        victoryText.anchoredPosition -= new Vector2(0, 50);
+        victoryText.anchoredPosition = new Vector2(0, 233);
 
-        victoryText.DOScale(targetScale, scaleInDuration).SetEase(Ease.OutBack);
-        victoryText.DOAnchorPos(targetPos, slideUpDuration).SetEase(Ease.OutQuad);
+        Sequence seq = DOTween.Sequence();
+        seq.Append(victoryText.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack));
+        seq.Append(victoryText.DOAnchorPos(targetPos, 0.3f).SetEase(Ease.OutQuad));
+        seq.Play();
     }
-
+    
     [ContextMenu("AnimateNextFeaturePanel")]
     private void AnimateNextFeaturePanel()
     {
@@ -111,50 +125,85 @@ public class UIManager : MonoBehaviour
         float screenHeight = Screen.height;
         nextFeaturePanel.anchoredPosition = new Vector2(targetPos.x, -screenHeight);
 
-        nextFeaturePanel.DOAnchorPos(targetPos, slideInDuration)
-            .SetEase(Ease.OutBack)
-            .SetDelay(0.2f);
+        nextFeaturePanel.DOAnchorPos(targetPos, 1.5f).SetDelay(0.4f).SetEase(Ease.OutCirc);
+        
+        AnimateProgressFill(0.25f);
     }
 
     [ContextMenu("AnimateProgressFill")]
     public void AnimateProgressFill(float targetValue)
     {
         progressFill.fillAmount = 0f;
-        progressFill.DOFillAmount(targetValue, 0.8f).SetEase(Ease.OutCubic);
+        progressFill.DOFillAmount(targetValue, 1f).SetDelay(1f).SetEase(Ease.OutCubic);
 
         DOTween.To(() => 0f, x =>
         {
             percentageText.text = $"{Mathf.RoundToInt(x * 100)}%";
-        }, targetValue, 0.8f).SetEase(Ease.OutCubic);
+        }, targetValue, 1f).SetDelay(1f).SetEase(Ease.OutCubic);
     }
 
     [ContextMenu("AnimateCoinsToHUD")]
     private void AnimateCoinsToHUD()
     {
+        Invoke(nameof(EnableYouWin), 0.5f);
         for (int i = 0; i < coinIcons.Length; i++)
         {
             RectTransform coin = coinIcons[i];
 
-            // reset
+            // --- Reset state ---
+            coin.DOKill(); // stop any existing tweens
             coin.localScale = Vector3.zero;
             coin.localPosition = _coinInitialPos[i];
+            coin.gameObject.SetActive(true);
 
+            // --- Sequence setup ---
             Sequence seq = DOTween.Sequence();
 
+            // 1️⃣ Small stagger delay between coins
             seq.AppendInterval(i * coinTweenDelay);
-            seq.Append(coin.DOScale(_coinInitialScale[i], 0.3f).SetEase(Ease.OutBack));
-            seq.Join(coin.DOLocalMoveY(coin.localPosition.y + Random.Range(coinFloatStrength * 0.5f, coinFloatStrength), 0.3f)
-                .SetLoops(2, LoopType.Yoyo)
-                .SetEase(Ease.InOutSine));
 
-            // Fly to HUD
-            seq.Append(coin.DOMove(hudCoinTarget.position, coinMoveDuration)
-                .SetEase(Ease.InBack));
+            // 2️⃣ Scale in & float a bit
+            seq.Append(coin.DOScale(_coinInitialScale[i], 0.35f).SetEase(Ease.OutBack));
+            seq.Join(coin.DOLocalMoveY(
+                coin.localPosition.y + Random.Range(coinFloatStrength * 0.5f, coinFloatStrength),
+                0.4f
+            ).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InOutSine));
 
-            seq.Join(coin.DOScale(Vector3.zero, coinMoveDuration).SetEase(Ease.InBack));
+            // 3️⃣ Idle pause
+            seq.AppendInterval(0.5f);
+
+            // 4️⃣ Fly to HUD target
+            seq.Append(coin.DOMove(hudCoinTarget.position, coinMoveDuration).SetEase(Ease.InBack));
+
+            // 5️⃣ Scale out while flying
+            seq.Append(coin.DOScale(Vector3.zero, coinMoveDuration * 0.1f).SetEase(Ease.InBack));
+
+            // 6️⃣ Reset after animation
+            // seq.OnComplete(() =>
+            // {
+            //     ResetCoins();
+            // });
 
             seq.Play();
         }
+    }
+
+    private void ResetCoins()
+    {
+        for (int i = 0; i < coinIcons.Length; i++)
+        {
+            coinIcons[i].gameObject.SetActive(false);
+            coinIcons[i].localPosition = _coinInitialPos[i];
+            coinIcons[i].localScale = _coinInitialScale[i];
+        }
+    }
+
+    private void EnableYouWin()
+    {
+        youWinText.SetActive(true);
+        coinCount.SetActive(true);
+
+        buttons.DOScale(Vector3.one, 0.35f).SetEase(Ease.OutBack);
     }
 
     #endregion

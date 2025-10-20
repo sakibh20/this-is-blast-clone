@@ -606,10 +606,12 @@ MonoBehaviour:
   uiManager: {fileID: 1323234722}
   levelPrefabs:
   - {fileID: 7257056508865349166, guid: ee8386c4bffbdeb43a81d0933d84e31e, type: 3}
+  - {fileID: 7257056508865349166, guid: ee8386c4bffbdeb43a81d0933d84e31e, type: 3}
   levelRoot: {fileID: 960374845}
   levelText: {fileID: 1430329114}
   progressBar: {fileID: 1331023510}
   levelPrefKey: CurrentLevel
+  _currentLevelInstance: {fileID: 0}
 --- !u!1 &193778188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,13 +1214,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 166895810}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 166895812}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1588,7 +1590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &534459281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1794,6 +1796,7 @@ GameObject:
   - component: {fileID: 655526103}
   - component: {fileID: 655526105}
   - component: {fileID: 655526104}
+  - component: {fileID: 655526106}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -1859,6 +1862,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655526102}
   m_CullTransparentMesh: 1
+--- !u!114 &655526106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655526102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 655526104}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &700430358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2145,7 +2192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &886891992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2220,7 +2267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &890775653
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2543,7 +2590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1184853065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2812,7 +2859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1319452470
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2916,6 +2963,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 1359613361}
   levelProgress: {fileID: 402835330}
+  levelText: {fileID: 1781790733}
+  youWinText: {fileID: 1184853064}
+  coinCount: {fileID: 1329720795}
+  buttons: {fileID: 1930908052}
   mainPanel: {fileID: 587386518}
   victoryText: {fileID: 2101785046}
   nextFeaturePanel: {fileID: 1421402635}
@@ -2932,8 +2983,6 @@ MonoBehaviour:
   - {fileID: 534459281}
   hudCoinTarget: {fileID: 1503388676}
   fadeDuration: 0.3
-  scaleInDuration: 0.4
-  slideUpDuration: 0.4
   slideInDuration: 0.5
   coinTweenDelay: 0.1
   coinMoveDuration: 0.8
@@ -2955,7 +3004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1329720796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3196,7 +3245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1378089347
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3527,7 +3576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1471086089
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4026,7 +4075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1715048782
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4037,7 +4086,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2093323403}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4328,7 +4377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1927092080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4413,7 +4462,7 @@ RectTransform:
   m_GameObject: {fileID: 1930908051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 655526103}

@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
 using DG.Tweening;
-using UnityEditor;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class ColorCube : MonoBehaviour
 {
@@ -100,14 +96,6 @@ public class ColorCube : MonoBehaviour
 
     public void MoveForwardWithDelay(float newZ)
     {
-        StartCoroutine(MoveForwardRoutine(newZ));
-    }
-
-    private IEnumerator MoveForwardRoutine(float newZ)
-    {
-        yield return new WaitForSeconds(_hideDuration);
-        //transform.DOMoveZ(newZ, 0.2f).SetEase(Ease.OutSine);
-        
         transform.DOMoveZ(newZ, 0.15f)
             .SetEase(Ease.OutSine)
             .OnComplete(() =>
@@ -117,9 +105,28 @@ public class ColorCube : MonoBehaviour
                 transform.DOPunchPosition(-wobbleDir, 0.15f, vibrato: 2, elasticity: 0.5f)
                     .SetEase(Ease.OutQuad)
                     .SetId("cubeMoveWobble");
-            });
-
+            }).SetDelay(_hideDuration);
+        
+        //StartCoroutine(MoveForwardRoutine(newZ));
     }
+
+    // private IEnumerator MoveForwardRoutine(float newZ)
+    // {
+    //     yield return new WaitForSeconds(_hideDuration);
+    //     //transform.DOMoveZ(newZ, 0.2f).SetEase(Ease.OutSine);
+    //     
+    //     transform.DOMoveZ(newZ, 0.15f)
+    //         .SetEase(Ease.OutSine)
+    //         .OnComplete(() =>
+    //         {
+    //             // Small position wobble
+    //             Vector3 wobbleDir = transform.forward * 0.1f;
+    //             transform.DOPunchPosition(-wobbleDir, 0.15f, vibrato: 2, elasticity: 0.5f)
+    //                 .SetEase(Ease.OutQuad)
+    //                 .SetId("cubeMoveWobble");
+    //         });
+    //
+    // }
 }
 
 public enum CubeColors

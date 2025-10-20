@@ -16,7 +16,7 @@ public class PlayerShooter : MonoBehaviour
     
     [SerializeField] private Transform shootPos;
     
-    private float _rotationDuration = 0.5f;
+    private float _rotationDuration = 0.2f;
     
     private Player _player;
     
@@ -25,10 +25,11 @@ public class PlayerShooter : MonoBehaviour
         _player = GetComponent<Player>();
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         CancelInvoke();
         StopShooting();
+        transform.DOKill();
     }
 
     public void OnReadyToShoot()
@@ -131,7 +132,7 @@ public class PlayerShooter : MonoBehaviour
         
         Vector3 recoilDir = -target.transform.forward * recoilStrength;
 
-        DOTween.Kill("playerRecoil");
+        //DOTween.Kill("playerRecoil");
 
         transform.DOPunchPosition(recoilDir, duration, vibrato: 5, elasticity: 0.6f)
             .SetEase(Ease.OutQuad)

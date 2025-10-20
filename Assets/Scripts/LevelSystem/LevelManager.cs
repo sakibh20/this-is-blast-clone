@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private string levelPrefKey = "CurrentLevel";
     
     private int _currentLevelIndex;
-    private GameObject _currentLevelInstance;
+    [SerializeField] private GameObject _currentLevelInstance;
     
     private int _totalCubes;
     private int _destroyedCubes;
@@ -36,12 +36,7 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        uiManager.ShowGameUi();
-        
-        LoadLevelIndex();
-        SpawnCurrentLevel();
-        UpdateLevelText();
-        ResetProgressBar();
+        LoadNextLevel();
     }
 
     private void LoadLevelIndex()
@@ -50,10 +45,11 @@ public class LevelManager : MonoBehaviour
         _currentLevelIndex = Mathf.Clamp(_currentLevelIndex, 0, levelPrefabs.Count - 1);
     }
 
+    [ContextMenu("SpawnCurrentLevel")]
     private void SpawnCurrentLevel()
     {
         if (_currentLevelInstance != null)
-            Destroy(_currentLevelInstance);
+            DestroyImmediate(_currentLevelInstance);
 
         if (levelPrefabs.Count == 0)
         {
@@ -102,6 +98,8 @@ public class LevelManager : MonoBehaviour
     
     private void OnLevelComplete()
     {
+        uiManager.ShowLevelCompleteUI(_currentLevelIndex);
+        
         _currentLevelIndex++;
         if (_currentLevelIndex >= levelPrefabs.Count)
         {
@@ -110,12 +108,14 @@ public class LevelManager : MonoBehaviour
 
         PlayerPrefs.SetInt(levelPrefKey, _currentLevelIndex);
         PlayerPrefs.Save();
+    }
+    public void LoadNextLevel()
+    {
+        uiManager.ShowGameUi();
         
-        //levelCompleteUI.PlayLevelCompleteSequence(0.25f);
-        uiManager.ShowLevelCompleteUI();
-
-        // SpawnCurrentLevel();
-        // UpdateLevelText();
-        // ResetProgressBar();
+        LoadLevelIndex();
+        SpawnCurrentLevel();
+        UpdateLevelText();
+        ResetProgressBar();
     }
 }
