@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Script References")] 
+    [SerializeField] private ScoreManager scoreManager;
+    
     [Header("HUD Elements")]
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject levelProgress;
@@ -24,7 +27,15 @@ public class UIManager : MonoBehaviour
 
     [Header("Coins")]
     [SerializeField] private RectTransform[] coinIcons;
-    [SerializeField] private Transform hudCoinTarget;
+    [SerializeField] private RectTransform hudCoinTarget;
+    
+    [SerializeField] private TextMeshProUGUI hudCoinText;
+    [SerializeField] private float coinPopScale = 1.4f;
+    [SerializeField] private float coinPopDuration = 0.25f;
+    [SerializeField] private float coinCountTweenDuration = 0.5f;
+
+    private int _currentCoins;
+    private int _targetCoins;
 
     [Header("Tween Settings")]
     [SerializeField] private float fadeDuration = 0.3f;
@@ -73,7 +84,8 @@ public class UIManager : MonoBehaviour
         FadeInMainPanel();
         AnimateVictoryText();
         AnimateNextFeaturePanel();
-        Invoke(nameof(AnimateCoinsToHUD), 1.0f);
+        Invoke(nameof(AnimateCoinsToHUD), 1.5f);
+        AnimateHUDCoinFeedback(10);
     }
 
     [ContextMenu("FadeInMainPanel")]
@@ -173,19 +185,42 @@ public class UIManager : MonoBehaviour
             seq.AppendInterval(0.5f);
 
             // 4️⃣ Fly to HUD target
-            seq.Append(coin.DOMove(hudCoinTarget.position, coinMoveDuration).SetEase(Ease.InBack));
+            seq.Append(coin.DOMove(hudCoinTarget.transform.position, coinMoveDuration).SetEase(Ease.InBack));
 
             // 5️⃣ Scale out while flying
             seq.Append(coin.DOScale(Vector3.zero, coinMoveDuration * 0.1f).SetEase(Ease.InBack));
 
-            // 6️⃣ Reset after animation
-            // seq.OnComplete(() =>
-            // {
-            //     ResetCoins();
-            // });
-
             seq.Play();
         }
+    }
+    
+    private void AnimateHUDCoinFeedback(int coinsAdded)
+    {
+        if (hudCoinText == null) return;
+
+
+        int startValue = _currentCoins;
+        
+        scoreManager.AddScore(coinsAdded);
+        _targetCoins = scoreManager.CurrentScore;
+        int endValue = _targetCoins;
+
+        DOTween.To(() => startValue, x =>
+            {
+                startValue = x;
+                hudCoinText.text = startValue.ToString();
+            }, endValue, coinCountTweenDuration)
+            .SetDelay(3.5f)
+            .SetEase(Ease.OutQuad)
+            .OnComplete(() => _currentCoins = _targetCoins);
+        
+        hudCoinTarget.DOKill();
+        hudCoinTarget
+            .DOPunchScale(Vector3.one * (coinPopScale - 1f), coinPopDuration, vibrato: 1, elasticity: 0.6f)
+            .SetLoops(coinsAdded, LoopType.Restart)
+            .SetDelay(3.5f)
+            .SetEase(Ease.OutBack)
+            .SetLink(hudCoinTarget.gameObject);
     }
 
     private void ResetCoins()

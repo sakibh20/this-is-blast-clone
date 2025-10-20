@@ -25,10 +25,12 @@ public class ColorCube : MonoBehaviour
         _collider = GetComponent<Collider>();
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         StopAllCoroutines();
         CancelInvoke();
+
+        transform.DOKill();
     }
 
     [ContextMenu("Update ColorCube")]

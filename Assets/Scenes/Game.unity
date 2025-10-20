@@ -1347,6 +1347,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402835330}
   m_CullTransparentMesh: 1
+--- !u!1 &404502024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 404502025}
+  - component: {fileID: 404502026}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &404502025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404502024}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1958484622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &404502026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404502024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfc73d6d3118184fa8798d20344b7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 88063101}
+  defaultScore: 300
 --- !u!1 &412389999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,7 +1752,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587386515}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -2173,7 +2219,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8869483310179259468, guid: ee8386c4bffbdeb43a81d0933d84e31e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3962689940782448064, guid: ee8386c4bffbdeb43a81d0933d84e31e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: ee8386c4bffbdeb43a81d0933d84e31e, type: 3}
 --- !u!1 &886891991
 GameObject:
@@ -2961,6 +3013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979017f1be34d64299a5302abe36fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 404502026}
   settings: {fileID: 1359613361}
   levelProgress: {fileID: 402835330}
   levelText: {fileID: 1781790733}
@@ -2981,7 +3034,11 @@ MonoBehaviour:
   - {fileID: 1319452470}
   - {fileID: 1471086089}
   - {fileID: 534459281}
-  hudCoinTarget: {fileID: 1503388676}
+  hudCoinTarget: {fileID: 1910480426}
+  hudCoinText: {fileID: 88063101}
+  coinPopScale: 1.3
+  coinPopDuration: 0.1
+  coinCountTweenDuration: 0.5
   fadeDuration: 0.3
   slideInDuration: 0.5
   coinTweenDelay: 0.1
@@ -4630,6 +4687,7 @@ Transform:
   - {fileID: 707781942}
   - {fileID: 166895811}
   - {fileID: 1323234721}
+  - {fileID: 404502025}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1965476102
