@@ -1,14 +1,11 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using DG.Tweening;
 using UnityEngine;
 
 public class CubeManager : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private Transform levelRoot;
-    //[SerializeField] private float forwardDuration = 0.2f;
 
     [Header("Output")]
     [SerializeField] private List<CubeColumn> allColumns = new List<CubeColumn>();
@@ -55,34 +52,15 @@ public class CubeManager : MonoBehaviour
 
             columnMap[xPos].cubes.Add(colorCube);
         }
-
-        // Sort cubes in each column by Z (front to back)
         foreach (var kvp in columnMap)
         {
             kvp.Value.cubes = kvp.Value.cubes.OrderBy(c => c.transform.position.z).ToList();
             allColumns.Add(kvp.Value);
         }
-
-        // Optional: sort columns by X for consistent left-to-right order
         allColumns = allColumns.OrderBy(col => col.cubes[0].transform.position.x).ToList();
         
         LevelManager.Instance.SetTotalCubes(_totalCube);
     }
-    
-    // public List<ColorCube> GetFrontCubes(CubeColors shooterColor, int targetCount, Vector3 position)
-    // {
-    //     List<ColorCube> frontCubes = new List<ColorCube>();
-    //
-    //     foreach(var column in allColumns)
-    //     {
-    //         // Front cube of this column matching color
-    //         ColorCube frontCube = column.cubes.FirstOrDefault(c => c.Color == shooterColor);
-    //         if(frontCube != null)
-    //             frontCubes.Add(frontCube);
-    //     }
-    //
-    //     return frontCubes;
-    // }
     
     public List<ColorCube> GetFrontCubes(CubeColors shooterColor, int targetCount)
     {
@@ -92,12 +70,11 @@ public class CubeManager : MonoBehaviour
         {
             if (column.cubes.Count == 0) continue;
 
-            ColorCube frontCube = column.cubes[0]; // always the front cube
+            ColorCube frontCube = column.cubes[0];
             if (frontCube.Color != shooterColor || frontCube.IsReserved) continue;
 
             selectedCubes.Add(frontCube);
-
-            // Mark as reserved to avoid picking it again
+            
             frontCube.IsReserved = true;
 
             if (selectedCubes.Count >= targetCount)
@@ -109,7 +86,6 @@ public class CubeManager : MonoBehaviour
     
     public void OnCubeDestroyed(ColorCube cube)
     {
-        // Find column containing this cube
         CubeColumn column = allColumns.FirstOrDefault(col => col.cubes.Any(c => c.transform == cube.transform));
         if (column != null)
         {
@@ -127,10 +103,6 @@ public class CubeColumn
     {
         if (cubes.Count == 0) return;
 
-        // Destroyed cube is at index 0
-        // CubeColors destroyedColor = cubes[0].Color;
-        // cubes[0].IsReserved = false; // reset just in case
-
         if (cubes.Count > 1)
         {
             for (int i = 1; i < cubes.Count; i++)
@@ -141,7 +113,6 @@ public class CubeColumn
             }
         }
 
-        // Remove the destroyed cube from the list
         cubes.RemoveAt(0);
     }
 }
