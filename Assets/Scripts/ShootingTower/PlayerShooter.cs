@@ -76,7 +76,7 @@ public class PlayerShooter : MonoBehaviour
     public void StopShooting()
     {
         CancelInvoke();
-        Debug.Log($"targets count: {_allTargets.Count}");
+        
         StopAllCoroutines();
         transform.DOKill();
     }

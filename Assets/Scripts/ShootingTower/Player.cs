@@ -16,6 +16,14 @@ public class Player : MonoBehaviour
     [SerializeField] private TMP_Text ammoText;
     [SerializeField] private List<MeshRenderer> allRenderers;
     
+    [SerializeField] private float inactiveDarkenAmount = 0.4f;
+    [SerializeField] private Color32 activeAmmoColor;
+    [SerializeField] private Color32 inactiveAmmoColor;
+    
+    private static readonly int ColorProp = Shader.PropertyToID("_Color");
+    private Color _originalColor;
+    private bool _isInactive;
+    
     public int AmmoCount => ammoCount;
     public CubeColors Color => cubeColors;
     
@@ -50,8 +58,12 @@ public class Player : MonoBehaviour
         _mergeManager = FindFirstObjectByType<MergeManager>();
         _mergeManager.docManager = docManager;
     }
-    
-    
+
+    private void Start()
+    {
+        OnChangedCurrentState();
+    }
+
     private void Update()
     {
         HandleClickDetection();
@@ -95,6 +107,7 @@ public class Player : MonoBehaviour
         foreach (MeshRenderer meshRenderer in allRenderers)
         {
             meshRenderer.material = ReferenceManager.Instance.GetMaterialForColor(cubeColors) ?? meshRenderer.material;
+            _originalColor = meshRenderer.material.GetColor(ColorProp);
         }
 
         UpdateAmmoCount();
@@ -102,14 +115,34 @@ public class Player : MonoBehaviour
 
     private void OnChangedCurrentState()
     {
-        if (currentState == PlayerState.ReadyToShoot)
+        if (currentState == PlayerState.ReadyToMove)
+        {
+            ShootActive();
+        }
+        else if (currentState == PlayerState.ReadyToShoot)
         {
             _shooter.OnReadyToShoot();
         }
-        if (currentState == PlayerState.Merging)
+        else if (currentState == PlayerState.Merging)
         {
             _shooter.StopShooting();
         }
+        else if(currentState == PlayerState.Undefined)
+        {
+            IdleActive();
+        }
+    }
+
+    [ContextMenu("ShootActive")]
+    private void ShootActive()
+    {
+        ammoText.color = activeAmmoColor;
+    }
+    
+    [ContextMenu("IdleActive")]
+    private void IdleActive()
+    {
+        ammoText.color = inactiveAmmoColor;
     }
 }
 

@@ -61,6 +61,10 @@ public class MoveQueue : MonoBehaviour
             }
 
             player.Player.PlayerMovement.MoveForward(newTargetPos);
+            if (i == 0)
+            {
+                player.Player.CurrentState = PlayerState.ReadyToMove;
+            }
         }
     }
 

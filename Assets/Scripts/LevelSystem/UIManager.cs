@@ -50,6 +50,8 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        DOTween.SetTweensCapacity(1500, 50);
+        
         // Store initial transforms for coins
         _coinInitialPos = new Vector3[coinIcons.Length];
         _coinInitialScale = new Vector3[coinIcons.Length];
