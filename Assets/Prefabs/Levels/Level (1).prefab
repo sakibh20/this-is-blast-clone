@@ -320,6 +320,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelBonus: 10
   isHard: 0
+  customTheme: 0
+  customColor:
+    serializedVersion: 2
+    rgba: 0
+  levelThemesSprites: []
 --- !u!1 &7413835467070335822
 GameObject:
   m_ObjectHideFlags: 0

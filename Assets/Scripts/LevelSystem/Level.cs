@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +14,9 @@ public class Level : MonoBehaviour
     public bool UseCustomTheme => customTheme;
     [SerializeField] private Color32 customColor;
     
-    
-    [SerializeField] private List<SpriteRenderer> levelThemesSprites;
+    [SerializeField] private List<TargetSpriteRenderers> levelThemesSprites;
 
-    public List<SpriteRenderer> LevelThemesSprites => levelThemesSprites;
+    public List<TargetSpriteRenderers> LevelThemesSprites => levelThemesSprites;
 
     public Color32 CustomColor => customColor;
 }

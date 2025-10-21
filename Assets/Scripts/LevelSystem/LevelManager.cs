@@ -13,9 +13,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private List<Level> levelPrefabs = new List<Level>();
     [SerializeField] private Transform levelRoot;
 
-    [SerializeField] private List<Renderer> levelThemesRenderer;
-    [SerializeField] private List<SpriteRenderer> levelThemesSprites;
-    [SerializeField] private List<Image> levelThemesImages;
+    [SerializeField] private List<TargetRenderers> levelThemesRenderer;
+    [SerializeField] private List<TargetSpriteRenderers> levelThemesSprites;
+    [SerializeField] private List<TargetImages> levelThemesImages;
 
     [Header("UI References")]
     [SerializeField] private TMP_Text levelText;
@@ -48,7 +48,22 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        InitDefaultColor();
+        
         LoadNextLevel();
+    }
+    
+    private void InitDefaultColor()
+    {
+        foreach (TargetSpriteRenderers renderer1 in levelThemesSprites)
+        {
+            renderer1.defaultColor = renderer1.renderer.color;
+        }
+
+        foreach (TargetRenderers renderer1 in levelThemesRenderer)
+        {
+            renderer1.defaultColor = renderer1.renderer.material.color;
+        }
     }
 
     private void UpdateLevel()
@@ -64,27 +79,47 @@ public class LevelManager : MonoBehaviour
         
         if (_currentLevelInstance.UseCustomTheme)
         {
-            foreach (Image image in levelThemesImages)
+            // foreach (TargetImages image in levelThemesImages)
+            // {
+            //     Color baseColor = image.color;
+            //     image.color = baseColor * _currentLevelInstance.CustomColor;
+            //     
+            //     //ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.1f);
+            // }            
+        
+            foreach (TargetSpriteRenderers renderer1 in levelThemesSprites)
             {
-                Color baseColor = image.color;
-                image.color = baseColor * _currentLevelInstance.CustomColor;
-                
-                //ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.1f);
-            }            
-            
-            foreach (SpriteRenderer renderer1 in levelThemesSprites)
+                ColorUtils.ApplyThemeTint(renderer1.renderer, _currentLevelInstance.CustomColor, 0.3f);
+            }
+        
+            foreach (TargetSpriteRenderers renderer1 in _currentLevelInstance.LevelThemesSprites)
             {
-                ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.3f);
+                ColorUtils.ApplyThemeTint(renderer1.renderer, _currentLevelInstance.CustomColor, 0.85f);
+            }
+        
+            foreach (TargetRenderers renderer1 in levelThemesRenderer)
+            {
+                ColorUtils.ApplyThemeTint(renderer1.renderer.material, _currentLevelInstance.CustomColor, 1f);
+            }
+        }
+        else
+        {
+            // foreach (TargetImages image in levelThemesImages)
+            // {
+            //     Color baseColor = image.color;
+            //     image.color = baseColor * _currentLevelInstance.CustomColor;
+            //     
+            //     //ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.1f);
+            // }            
+        
+            foreach (TargetSpriteRenderers renderer1 in levelThemesSprites)
+            {
+                ColorUtils.ResetToOriginal(renderer1.renderer, renderer1.defaultColor);
             }
             
-            foreach (SpriteRenderer renderer1 in _currentLevelInstance.LevelThemesSprites)
+            foreach (TargetRenderers renderer1 in levelThemesRenderer)
             {
-                ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.85f);
-            }
-
-            foreach (Renderer renderer1 in levelThemesRenderer)
-            {
-                ColorUtils.ApplyThemeTint(renderer1.material, _currentLevelInstance.CustomColor, 1f);
+                ColorUtils.ResetToOriginal(renderer1.renderer.material, renderer1.defaultColor);
             }
         }
     }
@@ -185,4 +220,25 @@ public class LevelManager : MonoBehaviour
         UpdateLevelText();
         ResetProgressBar();
     }
+}
+
+[Serializable]
+public class TargetRenderers
+{
+    public Renderer renderer;
+    public Color32 defaultColor;
+}
+
+[Serializable]
+public class TargetSpriteRenderers
+{
+    public SpriteRenderer renderer;
+    public Color32 defaultColor;
+}
+
+[Serializable]
+public class TargetImages
+{
+    public Image renderer;
+    public Color32 defaultColor;
 }

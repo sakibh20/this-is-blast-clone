@@ -131,8 +131,17 @@ public static class ColorUtils
     public static void ResetToOriginal(SpriteRenderer sr, Color original)
     {
         if (sr == null) return;
+
+        // If using MaterialPropertyBlock (recommended), apply it
+        MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+        sr.GetPropertyBlock(mpb);
+        mpb.SetColor("_Color", original);  // default sprite color property
+        sr.SetPropertyBlock(mpb);
+
+        // Also reset sr.color in case property block is not used
         sr.color = original;
     }
+
 
     public static void ResetToOriginal(Image img, Color original)
     {

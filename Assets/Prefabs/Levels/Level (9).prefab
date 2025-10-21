@@ -1049,11 +1049,26 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4283178038
   levelThemesSprites:
-  - {fileID: 2545896655616812762}
-  - {fileID: 570077770993862026}
-  - {fileID: 6782892527957652112}
-  - {fileID: 5945765784481212124}
-  - {fileID: 5736429173292133768}
+  - renderer: {fileID: 2545896655616812762}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 570077770993862026}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 6782892527957652112}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 5945765784481212124}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 5736429173292133768}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
 --- !u!1 &6748319043955271477
 GameObject:
   m_ObjectHideFlags: 0

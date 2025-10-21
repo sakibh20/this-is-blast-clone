@@ -752,15 +752,39 @@ MonoBehaviour:
   - {fileID: 428837316871405536, guid: a74e54270e0e61a4c805c0c4c4d93a82, type: 3}
   levelRoot: {fileID: 960374845}
   levelThemesRenderer:
-  - {fileID: 218226527}
-  - {fileID: 606226402}
-  - {fileID: 605988967}
-  - {fileID: 316102581}
-  - {fileID: 465452830}
-  - {fileID: 1530280343}
-  - {fileID: 1835758224}
+  - renderer: {fileID: 218226527}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 606226402}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 605988967}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 316102581}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 465452830}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 1530280343}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
+  - renderer: {fileID: 1835758224}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
   levelThemesSprites:
-  - {fileID: 358845285}
+  - renderer: {fileID: 358845285}
+    defaultColor:
+      serializedVersion: 2
+      rgba: 0
   levelThemesImages: []
   levelText: {fileID: 1430329114}
   progressBar: {fileID: 1331023510}
@@ -5592,7 +5616,7 @@ MonoBehaviour:
   coinClip: {fileID: 8300000, guid: c30f108859d40e24fb777f6cf0553295, type: 3}
   mergeClip: {fileID: 8300000, guid: 273e9ff0fbaf7d441b0cdc44c5bd9a4e, type: 3}
   gameDefaultSound: {fileID: 8300000, guid: 8ee41b59efe94a24c8c1b9731ec149a1, type: 3}
-  gameHardSound: {fileID: 8300000, guid: 01255daccb8aa7a4f9e6665c8688d944, type: 3}
+  gameHardSound: {fileID: 0}
   audioSource: {fileID: 1002583114}
 --- !u!1 &1603359566
 GameObject:

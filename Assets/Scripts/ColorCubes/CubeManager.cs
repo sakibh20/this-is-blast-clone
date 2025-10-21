@@ -110,9 +110,13 @@ public class CubeManager : MonoBehaviour
         if (column == null)
             return;
 
-        // Was this cube one of the front-most cubes in the column (lowest Z)?
-        float minZ = column.cubes.Min(c => c.Pos.z);
-        bool wasFrontCube = Mathf.Abs(cube.Pos.z - minZ) < 0.01f;
+        // Find the true front cube in this column
+        ColorCube frontCube = column.cubes
+            .OrderBy(c => c.Pos.z)
+            .ThenBy(c => c.Pos.y)
+            .FirstOrDefault();
+
+        bool wasFrontCube = (cube == frontCube);
 
         if (wasFrontCube)
         {
@@ -120,7 +124,7 @@ public class CubeManager : MonoBehaviour
             column.OnFrontCubeDestroyed(cube);
         }
 
-        // Now remove it after all logic that depends on its position
+        // Now remove it after logic that depends on it
         column.cubes.Remove(cube);
     }
 }
@@ -134,7 +138,7 @@ public class CubeColumn
     {
         return cubes.Count > 0 ? cubes[0].transform.position.x : float.MaxValue;
     }
-
+    
     public void OnFrontCubeDestroyed(ColorCube destroyedCube)
     {
         if (cubes.Count == 0)
@@ -142,20 +146,100 @@ public class CubeColumn
 
         float destroyedZ = destroyedCube.Pos.z;
 
-        // Get all cubes that are behind (higher Z) than the destroyed one
-        var behindCubes = cubes
-            .Where(c => c.Pos.z > destroyedZ)
-            .OrderBy(c => c.Pos.z)
+        // Group cubes by Z layer (same Z → same column depth)
+        var groupedByZ = cubes
+            .GroupBy(c => Mathf.Round(c.Pos.z * 100f) / 100f)
+            .OrderBy(g => g.Key)
             .ToList();
 
-        if (behindCubes.Count == 0)
+        // Find the destroyed Z layer index
+        int destroyedLayerIndex = groupedByZ.FindIndex(g => Mathf.Abs(g.Key - destroyedZ) < 0.01f);
+        if (destroyedLayerIndex == -1)
             return;
-        
-        for (int i = behindCubes.Count - 1; i >= 0; i--)
-        {
-            float targetZ = i == 0 ? destroyedCube.Pos.z : behindCubes[i - 1].Pos.z;
 
-            behindCubes[i].MoveForwardWithDelay(targetZ);
+        // Get groups that are BEHIND (higher Z)
+        var behindGroups = groupedByZ.Skip(destroyedLayerIndex + 1).ToList();
+        if (behindGroups.Count == 0)
+            return;
+
+        // Move from BACK to FRONT (reverse order)
+        for (int i = behindGroups.Count - 1; i >= 0; i--)
+        {
+            float targetZ = i == 0 ? destroyedCube.TargetPos.z : behindGroups[i - 1].Key;
+
+            foreach (var cube in behindGroups[i])
+            {
+                cube.MoveForwardWithDelay(targetZ);
+            }
         }
     }
+
+
+    // public void OnFrontCubeDestroyed(ColorCube destroyedCube)
+    // {
+    //     if (cubes.Count == 0)
+    //         return;
+    //
+    //     float destroyedZ = destroyedCube.Pos.z;
+    //
+    //     // Group cubes by their Z positions
+    //     var groupedByZ = cubes
+    //         .GroupBy(c => c.Pos.z)
+    //         .OrderBy(g => g.Key)
+    //         .ToList();
+    //
+    //     // Find which Z layer was destroyed
+    //     int destroyedLayerIndex = groupedByZ.FindIndex(g => Mathf.Abs(g.Key - destroyedZ) < 0.01f);
+    //     if (destroyedLayerIndex == -1)
+    //         return;
+    //
+    //     // Get all groups behind (higher Z)
+    //     var behindGroups = groupedByZ.Skip(destroyedLayerIndex + 1).ToList();
+    //     if (behindGroups.Count == 0)
+    //         return;
+    //
+    //     // Move each layer of cubes forward to the previous layer's target position
+    //     for (int i = 0; i < behindGroups.Count; i++)
+    //     {
+    //         float targetZ = (i == 0)
+    //             ? destroyedCube.TargetPos.z
+    //             : groupedByZ[destroyedLayerIndex + i].Key - (groupedByZ[destroyedLayerIndex + i].Key - groupedByZ[destroyedLayerIndex + i - 1].Key);
+    //
+    //         foreach (var cube in behindGroups[i])
+    //         {
+    //             cube.MoveForwardWithDelay(targetZ);
+    //         }
+    //     }
+    // }
+    
+    // public void OnFrontCubeDestroyed(ColorCube destroyedCube)
+    // {
+    //     if (cubes.Count == 0)
+    //         return;
+    //
+    //     float destroyedZ = destroyedCube.Pos.z;
+    //
+    //     // Get all cubes that are behind (higher Z) than the destroyed one
+    //     var behindCubes = cubes
+    //         .Where(c => c.Pos.z > destroyedZ)
+    //         .OrderBy(c => c.Pos.z)
+    //         .ToList();
+    //
+    //     if (behindCubes.Count == 0)
+    //         return;
+    //     
+    //     for (int i = behindCubes.Count - 1; i >= 0; i--)
+    //     {
+    //         float targetZ = i == 0 ? destroyedCube.Pos.z : behindCubes[i - 1].Pos.z;
+    //     
+    //         behindCubes[i].MoveForwardWithDelay(targetZ);
+    //     }
+    //     
+    //     // for (int i = behindCubes.Count - 1; i >= 0; i--)
+    //     // {
+    //     //     float targetZ = i == 0 ? destroyedCube.TargetPos.z : behindCubes[i - 1].TargetPos.z;
+    //     //
+    //     //     behindCubes[i].MoveForwardWithDelay(targetZ);
+    //     // }
+    // }
 }

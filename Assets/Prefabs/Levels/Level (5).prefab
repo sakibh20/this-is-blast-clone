@@ -133,8 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1318601999971451445}
 --- !u!65 &6974640145976902471
 BoxCollider:
@@ -204,8 +202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5974218099003770329}
 --- !u!65 &7010031540966763480
 BoxCollider:
@@ -275,8 +271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5608027886275519118}
 --- !u!65 &2555770178788948180
 BoxCollider:
@@ -518,8 +512,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6717545002598469583}
 --- !u!65 &1692564213395575122
 BoxCollider:
@@ -675,8 +667,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8012018468330261510}
 --- !u!65 &5263994257835602557
 BoxCollider:
@@ -918,8 +908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2283702389966566906}
 --- !u!65 &1467371105799928528
 BoxCollider:
@@ -989,8 +977,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4430400199377117780}
 --- !u!65 &988769762231118314
 BoxCollider:
@@ -1319,8 +1305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1730788269085422388}
 --- !u!65 &3813098315527178991
 BoxCollider:
@@ -1476,8 +1460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 498288774326054407}
 --- !u!65 &3862902140330860867
 BoxCollider:
@@ -1719,8 +1701,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5878661450019493967}
 --- !u!65 &1472009627625755496
 BoxCollider:
@@ -1876,8 +1856,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 67610559913849095}
 --- !u!65 &5375807602629256646
 BoxCollider:
@@ -2033,8 +2011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4802408952745040113}
 --- !u!65 &4586117969174685214
 BoxCollider:
@@ -2511,8 +2487,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6584309752457502630}
 --- !u!65 &819036829316842399
 BoxCollider:
@@ -2582,8 +2556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 353629892457195386}
 --- !u!65 &7018701153079805024
 BoxCollider:
@@ -2825,8 +2797,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7652677036958814578}
 --- !u!65 &8484372075200569238
 BoxCollider:
@@ -2958,8 +2928,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 111441987204453130}
 --- !u!65 &7806459713011849530
 BoxCollider:
@@ -3201,8 +3169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4876843343748102523}
 --- !u!65 &80284584428181594
 BoxCollider:
@@ -3508,8 +3474,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5580303618002538220}
 --- !u!65 &2870322487828259353
 BoxCollider:
@@ -3579,8 +3543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8562044728471035119}
 --- !u!65 &8516975861040669323
 BoxCollider:
@@ -3767,8 +3729,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7598944644863217442}
 --- !u!65 &6874983155215463709
 BoxCollider:
@@ -3838,8 +3798,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6434198254967840471}
 --- !u!65 &7553187476663249919
 BoxCollider:
@@ -3909,8 +3867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3396986907835318603}
 --- !u!65 &7595216935839142884
 BoxCollider:
@@ -4066,8 +4022,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 286241338511552717}
 --- !u!65 &971679641232189675
 BoxCollider:
@@ -4739,8 +4693,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7612972902941584344}
 --- !u!65 &280485511524650500
 BoxCollider:
@@ -4843,8 +4795,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5753334542752033082}
 --- !u!65 &6687484290170814158
 BoxCollider:
@@ -4914,8 +4864,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2874019864122287085}
 --- !u!65 &8374351261621280468
 BoxCollider:
@@ -4985,8 +4933,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8190303890402129486}
 --- !u!65 &3756212795622072960
 BoxCollider:
@@ -5142,8 +5088,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8118773499373565728}
 --- !u!65 &3912178601970231927
 BoxCollider:
@@ -5385,8 +5329,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3865397325288791654}
 --- !u!65 &4342652715838009188
 BoxCollider:
@@ -5522,8 +5464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3872545320005920268}
 --- !u!65 &8080096385973260258
 BoxCollider:
@@ -5593,8 +5533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 9167769556005756262}
 --- !u!65 &3297049962911999420
 BoxCollider:
@@ -5664,8 +5602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7334921258833403529}
 --- !u!65 &1904352493397509566
 BoxCollider:
@@ -5821,8 +5757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4283206218861869727}
 --- !u!65 &4545861781417743671
 BoxCollider:
@@ -5978,8 +5912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7382781110642850608}
 --- !u!65 &7290850155957403821
 BoxCollider:
@@ -6049,8 +5981,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4058622640607858529}
 --- !u!65 &1931858370246494698
 BoxCollider:
@@ -6120,8 +6050,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6040403589731515035}
 --- !u!65 &1960000734718490824
 BoxCollider:
@@ -6191,8 +6119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4143736545824441229}
 --- !u!65 &3099908643698634202
 BoxCollider:
@@ -6262,8 +6188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8696054748793402007}
 --- !u!65 &7124152951150589915
 BoxCollider:
@@ -6595,8 +6519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1220144526339862952}
 --- !u!65 &188897804501469335
 BoxCollider:
@@ -6752,8 +6674,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7234131075069990070}
 --- !u!65 &2636312094616136678
 BoxCollider:
@@ -6909,8 +6829,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8143068527783355348}
 --- !u!65 &1604994885791726702
 BoxCollider:
@@ -7152,8 +7070,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7927632050275855604}
 --- !u!65 &5427694030645786221
 BoxCollider:
@@ -7309,8 +7225,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6036904599459142635}
 --- !u!65 &978685297487536412
 BoxCollider:
@@ -7380,8 +7294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1326772574561757374}
 --- !u!65 &6911159031303386392
 BoxCollider:
@@ -7537,8 +7449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8167925573878082586}
 --- !u!65 &8420067960116105747
 BoxCollider:
@@ -7694,8 +7604,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2983900812819850448}
 --- !u!65 &3974475213279018084
 BoxCollider:
@@ -7851,8 +7759,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4061889641645597896}
 --- !u!65 &8958736269096537328
 BoxCollider:
@@ -8009,8 +7915,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5757862113193879420}
 --- !u!65 &5058312689804348383
 BoxCollider:
@@ -8371,8 +8275,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6035348970883043853}
 --- !u!65 &1553888661805144909
 BoxCollider:
@@ -8442,8 +8344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8708706141884469298}
 --- !u!65 &3529816991998228934
 BoxCollider:
@@ -8599,8 +8499,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1357561965046200758}
 --- !u!65 &289306740772079847
 BoxCollider:
@@ -8670,8 +8568,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8887430200012017584}
 --- !u!65 &1849081654393860791
 BoxCollider:
@@ -8913,8 +8809,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8222098685892449832}
 --- !u!65 &5123062033605482148
 BoxCollider:
@@ -9156,8 +9050,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4728731187334289987}
 --- !u!65 &2524119646127866194
 BoxCollider:
@@ -9657,8 +9549,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3258093817643230008}
 --- !u!65 &3353461400320883314
 BoxCollider:
@@ -9814,8 +9704,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5344300207112731135}
 --- !u!65 &522558231520126732
 BoxCollider:
@@ -10640,8 +10528,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2539281963468518936}
 --- !u!65 &6689898479417780183
 BoxCollider:
@@ -10883,8 +10769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1867458811888879783}
 --- !u!65 &6364348074039586055
 BoxCollider:
@@ -11040,8 +10924,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7163042626064485736}
 --- !u!65 &5672123325541859882
 BoxCollider:
@@ -11283,8 +11165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 542685300947200835}
 --- !u!65 &6657769532116370000
 BoxCollider:
@@ -12136,8 +12016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5166658854418483910}
 --- !u!65 &6259008224365201254
 BoxCollider:
@@ -12379,8 +12257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1488044551577528625}
 --- !u!65 &7998795046158795856
 BoxCollider:
@@ -12661,8 +12537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1696068040208081162}
 --- !u!65 &7199694642016028063
 BoxCollider:
@@ -12994,8 +12868,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5593050888223847069}
 --- !u!65 &5452761000660352958
 BoxCollider:
@@ -13184,8 +13056,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6684950086791064933}
 --- !u!65 &2704128882426084702
 BoxCollider:
@@ -13374,8 +13244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8691999820741776124}
 --- !u!65 &38579216921238773
 BoxCollider:
@@ -14331,8 +14199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7323621835890800872}
 --- !u!65 &4584249415103539604
 BoxCollider:
@@ -14746,8 +14612,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2263994166085483090}
 --- !u!65 &55617109084414158
 BoxCollider:
@@ -14903,8 +14767,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4120163886326171462}
 --- !u!65 &5363483635557617581
 BoxCollider:
@@ -15232,8 +15094,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6189311410901027167}
 --- !u!65 &4672343268827870770
 BoxCollider:
@@ -15715,8 +15575,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3656385836239513576}
 --- !u!65 &2192131164313553646
 BoxCollider:
@@ -15872,8 +15730,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1674597568674729716}
 --- !u!65 &2037726816712023435
 BoxCollider:
@@ -16171,8 +16027,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6104849370887790746}
 --- !u!65 &5722786041484682549
 BoxCollider:
@@ -16414,8 +16268,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3099920865670164532}
 --- !u!65 &871658934723478507
 BoxCollider:
@@ -16721,8 +16573,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8929686399547753587}
 --- !u!65 &4863987148808506871
 BoxCollider:
@@ -16792,8 +16642,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4645016085584420371}
 --- !u!65 &3156790218721499120
 BoxCollider:
@@ -17211,8 +17059,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 372267383501665605}
 --- !u!65 &1699842185707677803
 BoxCollider:
@@ -17454,8 +17300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 9069135743863038746}
 --- !u!65 &3530573228860044309
 BoxCollider:
@@ -17611,8 +17455,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5533487098669038275}
 --- !u!65 &1537804957227485675
 BoxCollider:
@@ -17768,8 +17610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5540685706603550103}
 --- !u!65 &1026594578758806282
 BoxCollider:
@@ -17839,8 +17679,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 182275858695725555}
 --- !u!65 &7065378173967519185
 BoxCollider:
@@ -17910,8 +17748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6642000676405137002}
 --- !u!65 &1700054146689982053
 BoxCollider:
@@ -18153,8 +17989,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 193666462970809321}
 --- !u!65 &6777661418522679620
 BoxCollider:
@@ -18389,8 +18223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2115999844542126434}
 --- !u!65 &1499073781789162764
 BoxCollider:
@@ -18460,8 +18292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 129087389288775958}
 --- !u!65 &965948756277395661
 BoxCollider:
@@ -18617,8 +18447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7211106696531839221}
 --- !u!65 &103387469292152328
 BoxCollider:
@@ -18688,8 +18516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 367750223408538658}
 --- !u!65 &7469724661134414109
 BoxCollider:
@@ -18931,8 +18757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2693790935207031769}
 --- !u!65 &3493148499375708533
 BoxCollider:
@@ -19088,8 +18912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2836159874702724559}
 --- !u!65 &5236735036060229561
 BoxCollider:
@@ -19159,8 +18981,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4094483683071432773}
 --- !u!65 &3184266864406137782
 BoxCollider:
@@ -19402,8 +19222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5907878828850034480}
 --- !u!65 &8297343832547555281
 BoxCollider:
@@ -19473,8 +19291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5029143190180386412}
 --- !u!65 &7521207514749464121
 BoxCollider:
@@ -19544,8 +19360,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3245361605617420301}
 --- !u!65 &8585821410598823624
 BoxCollider:
@@ -19787,8 +19601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5379030934491082324}
 --- !u!65 &3564432588178666054
 BoxCollider:
@@ -19858,8 +19670,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8147052390309719538}
 --- !u!65 &4362634006728228240
 BoxCollider:
@@ -19929,8 +19739,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 508787677129775881}
 --- !u!65 &33435159722082735
 BoxCollider:
@@ -20211,8 +20019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7400151213753932163}
 --- !u!65 &1264749645919586275
 BoxCollider:
@@ -20313,8 +20119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2837659543037315134}
 --- !u!65 &2512854888391250609
 BoxCollider:
@@ -20384,8 +20188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4605238297968169435}
 --- !u!65 &5306864818702334888
 BoxCollider:
@@ -20541,8 +20343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3277107046712652685}
 --- !u!65 &7440587216141191831
 BoxCollider:
@@ -20784,8 +20584,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8192516191030072646}
 --- !u!65 &1492329556066620541
 BoxCollider:
@@ -20855,8 +20653,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4600281467778375599}
 --- !u!65 &1807867662736202627
 BoxCollider:
@@ -20926,8 +20722,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3553932449786516094}
 --- !u!65 &5678298323849370908
 BoxCollider:
@@ -21169,8 +20963,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 33578582523825233}
 --- !u!65 &8457457719762969127
 BoxCollider:
@@ -21240,8 +21032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7855881906555212008}
 --- !u!65 &1072514794559858635
 BoxCollider:
@@ -21483,8 +21273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3350002763560581920}
 --- !u!65 &503438123333658491
 BoxCollider:
@@ -21554,8 +21342,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8917902910454417344}
 --- !u!65 &2574289737002953338
 BoxCollider:
@@ -21750,8 +21536,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 81375998166621324}
 --- !u!65 &6884574847058823131
 BoxCollider:
@@ -22026,8 +21810,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2051232483023015221}
 --- !u!65 &2109468563267381956
 BoxCollider:
@@ -22097,8 +21879,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 551551834937191765}
 --- !u!65 &8294580912963342997
 BoxCollider:
@@ -22293,8 +22073,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2510217448874290347}
 --- !u!65 &5664223259442220920
 BoxCollider:
@@ -22364,8 +22142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4800999070362621755}
 --- !u!65 &4170368363526955851
 BoxCollider:
@@ -22435,8 +22211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2670448418448616795}
 --- !u!65 &8564880763870565702
 BoxCollider:
@@ -22592,8 +22366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5330216014909475472}
 --- !u!65 &4745943891753426907
 BoxCollider:
@@ -22663,8 +22435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1281852635138395350}
 --- !u!65 &5720598522054593203
 BoxCollider:
@@ -22734,8 +22504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7564927389491808914}
 --- !u!65 &8088718447283531966
 BoxCollider:
@@ -22805,8 +22573,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 307988649679558915}
 --- !u!65 &8458910923791012493
 BoxCollider:
@@ -23307,8 +23073,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8599299934991333745}
 --- !u!65 &785795927359787312
 BoxCollider:
@@ -23378,8 +23142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2128190180697539769}
 --- !u!65 &6044618411046136169
 BoxCollider:
@@ -23708,8 +23470,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3194382373599752421}
 --- !u!65 &3650466316030891987
 BoxCollider:
@@ -23779,8 +23539,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8573379418195756884}
 --- !u!65 &6424403885070600200
 BoxCollider:
@@ -23850,8 +23608,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5019877775764013488}
 --- !u!65 &1002609024471135062
 BoxCollider:
@@ -24007,8 +23763,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 9023154027904073759}
 --- !u!65 &4579091228491883825
 BoxCollider:
@@ -24195,8 +23949,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 648640887478777823}
 --- !u!65 &7795231288387708904
 BoxCollider:
@@ -24352,8 +24104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6200688076259982799}
 --- !u!65 &8659979964132558972
 BoxCollider:
@@ -24595,8 +24345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8547034685782963135}
 --- !u!65 &7256763788126951002
 BoxCollider:
@@ -25135,8 +24883,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4828117541909525768}
 --- !u!65 &5819742357491164743
 BoxCollider:
@@ -25331,8 +25077,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6021647263476504170}
 --- !u!65 &4691684959497336002
 BoxCollider:
@@ -25488,8 +25232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 9214438193543284116}
 --- !u!65 &6240086777612665990
 BoxCollider:
@@ -26194,8 +25936,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1547923889173294846}
 --- !u!65 &2590760443134562363
 BoxCollider:
@@ -26265,8 +26005,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5223133135132473058}
 --- !u!65 &6636916040490437841
 BoxCollider:
@@ -26572,8 +26310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 9013060162756999616}
 --- !u!65 &8110334501289339484
 BoxCollider:
@@ -26643,8 +26379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7251308631049655271}
 --- !u!65 &4167184583748396251
 BoxCollider:
@@ -26714,8 +26448,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5682811616635077380}
 --- !u!65 &125303082931171086
 BoxCollider:
@@ -26871,8 +26603,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 9034535336596437804}
 --- !u!65 &5649457345938279751
 BoxCollider:
@@ -27325,8 +27055,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8111395371842994669}
 --- !u!65 &5485239078456423622
 BoxCollider:
@@ -27429,8 +27157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5477657557975746031}
 --- !u!65 &5805077440871734598
 BoxCollider:
@@ -27790,8 +27516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 100326093613980113}
 --- !u!65 &5754255659105728621
 BoxCollider:
@@ -27947,8 +27671,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 635492039410781086}
 --- !u!65 &5777453596201423498
 BoxCollider:
@@ -28141,6 +27863,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelBonus: 10
   isHard: 0
+  customTheme: 0
+  customColor:
+    serializedVersion: 2
+    rgba: 0
+  levelThemesSprites: []
 --- !u!1 &5135907493819621529
 GameObject:
   m_ObjectHideFlags: 0
@@ -28696,8 +28423,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 400664002122075544}
 --- !u!65 &1454759780355611491
 BoxCollider:
@@ -28767,8 +28492,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2917596842970814130}
 --- !u!65 &144854988436672749
 BoxCollider:
@@ -28838,8 +28561,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7117008602877118007}
 --- !u!65 &873214401051002462
 BoxCollider:
@@ -28909,8 +28630,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6458542196834975786}
 --- !u!65 &6225478314431076399
 BoxCollider:
@@ -28980,8 +28699,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6989481820739586338}
 --- !u!65 &6512120770494545489
 BoxCollider:
@@ -29223,8 +28940,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2632147994320837532}
 --- !u!65 &1871581001219042603
 BoxCollider:
@@ -29294,8 +29009,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1636260661900227453}
 --- !u!65 &6582747099954703399
 BoxCollider:
@@ -29365,8 +29078,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5551604511346918985}
 --- !u!65 &9062934613142240502
 BoxCollider:
@@ -29436,8 +29147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3544899068378214608}
 --- !u!65 &158178078244219616
 BoxCollider:
@@ -29679,8 +29388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1256573115929188054}
 --- !u!65 &2390089742903400121
 BoxCollider:
@@ -29836,8 +29543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1717094370177799506}
 --- !u!65 &7890395993147112464
 BoxCollider:
@@ -29907,8 +29612,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2932581978912491130}
 --- !u!65 &472983384933240928
 BoxCollider:
@@ -30282,8 +29985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7948997006549357684}
 --- !u!65 &7844402890363669239
 BoxCollider:
@@ -30353,8 +30054,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3659774143116354367}
 --- !u!65 &5310039356616135558
 BoxCollider:
@@ -30556,8 +30255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1633273508197902399}
 --- !u!65 &4013344991091432396
 BoxCollider:
@@ -30627,8 +30324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 912953048915973181}
 --- !u!65 &9110521167614050521
 BoxCollider:
@@ -30960,8 +30655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 779481410428071129}
 --- !u!65 &4817779413363761013
 BoxCollider:
@@ -31117,8 +30810,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 9103316290357127533}
 --- !u!65 &8725859855725295114
 BoxCollider:
@@ -31320,8 +31011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8872297338446729916}
 --- !u!65 &3447349013160045643
 BoxCollider:
@@ -31391,8 +31080,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2016680968519145294}
 --- !u!65 &576468799469510257
 BoxCollider:
@@ -31462,8 +31149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8947809447197473185}
 --- !u!65 &2677469851070184344
 BoxCollider:
@@ -31533,8 +31218,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1098443026766166539}
 --- !u!65 &5672191812841770775
 BoxCollider:
@@ -31604,8 +31287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2861737212643412502}
 --- !u!65 &7579056580932599351
 BoxCollider:
@@ -31675,8 +31356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 340682153087669209}
 --- !u!65 &8225810292845656817
 BoxCollider:
@@ -31746,8 +31425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2879151770434183657}
 --- !u!65 &4398922098162772127
 BoxCollider:
@@ -32338,8 +32015,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 716347979956431465}
 --- !u!65 &2722931012097276561
 BoxCollider:
@@ -32667,8 +32342,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3843610888006094569}
 --- !u!65 &5164962043810509925
 BoxCollider:
@@ -32738,8 +32411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3496842060302688272}
 --- !u!65 &8257953719103633606
 BoxCollider:
@@ -32895,8 +32566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2466631313745119818}
 --- !u!65 &2292187342739312559
 BoxCollider:
@@ -33052,8 +32721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5876081126030432501}
 --- !u!65 &3039811420343414355
 BoxCollider:
@@ -33123,8 +32790,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7632161867501331723}
 --- !u!65 &6522100540721953378
 BoxCollider:
@@ -33280,8 +32945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8494244785590755009}
 --- !u!65 &9179657591949434087
 BoxCollider:
@@ -33437,8 +33100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1125872256575555512}
 --- !u!65 &8554034372523829859
 BoxCollider:
@@ -33594,8 +33255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1395671198165303107}
 --- !u!65 &1730381119622883235
 BoxCollider:
@@ -34009,8 +33668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4264873948813175139}
 --- !u!65 &5007321053007515131
 BoxCollider:
@@ -34338,8 +33995,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2899891306097152505}
 --- !u!65 &8285389844066218461
 BoxCollider:
@@ -34409,8 +34064,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2719685783851432656}
 --- !u!65 &346261111433896881
 BoxCollider:
@@ -34566,8 +34219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 313722430896553843}
 --- !u!65 &1567045845018662655
 BoxCollider:
@@ -34899,8 +34550,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3306705579804636785}
 --- !u!65 &2861090081600944788
 BoxCollider:
@@ -34970,8 +34619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7671055473462589517}
 --- !u!65 &5947386551207798550
 BoxCollider:
@@ -35332,8 +34979,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5005918354775152344}
 --- !u!65 &224305171973230771
 BoxCollider:
@@ -35403,8 +35048,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6664056071032122997}
 --- !u!65 &8815991701181534123
 BoxCollider:
@@ -35474,8 +35117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8446676632260986434}
 --- !u!65 &8784984920482130536
 BoxCollider:
@@ -35545,8 +35186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5364379603424045112}
 --- !u!65 &7695115805843268976
 BoxCollider:
@@ -35702,8 +35341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7550400010563166066}
 --- !u!65 &1863645368473243388
 BoxCollider:
@@ -35890,8 +35527,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 187922898347730808}
 --- !u!65 &3239050246961900000
 BoxCollider:
@@ -36048,8 +35683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7653251237034639561}
 --- !u!65 &707119613110366562
 BoxCollider:
@@ -36152,8 +35785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8340054907575927154}
 --- !u!65 &8729908452523579962
 BoxCollider:
@@ -36481,8 +36112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3503457676067567111}
 --- !u!65 &4813722824006708472
 BoxCollider:
@@ -36810,8 +36439,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3275695502873707438}
 --- !u!65 &2709303643623529140
 BoxCollider:
@@ -36881,8 +36508,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6297139480943500434}
 --- !u!65 &712254428857930804
 BoxCollider:
@@ -36952,8 +36577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4118431259981108650}
 --- !u!65 &6525514931413169452
 BoxCollider:
@@ -37367,8 +36990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3534911086853856923}
 --- !u!65 &1045788138870535256
 BoxCollider:
@@ -37438,8 +37059,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3133128670282076309}
 --- !u!65 &6830623885618012049
 BoxCollider:
@@ -37685,8 +37304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8033802685312283768}
 --- !u!65 &4745187759892886914
 BoxCollider:
@@ -37842,8 +37459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2201013864296672340}
 --- !u!65 &1300516973121552419
 BoxCollider:
@@ -37913,8 +37528,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1879593792111901189}
 --- !u!65 &2364758911904118409
 BoxCollider:
@@ -37984,8 +37597,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3257716627688908869}
 --- !u!65 &5361741280900724132
 BoxCollider:
@@ -38227,8 +37838,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6216154177281008047}
 --- !u!65 &1792868075335592368
 BoxCollider:
@@ -38298,8 +37907,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6994797544842802932}
 --- !u!65 &6519685398776316152
 BoxCollider:
@@ -38369,8 +37976,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8184490716842764206}
 --- !u!65 &1617677514962680432
 BoxCollider:
@@ -38731,8 +38336,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3211903354387936682}
 --- !u!65 &6879137329346569269
 BoxCollider:
@@ -38974,8 +38577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7999867267150182625}
 --- !u!65 &7288254033015170657
 BoxCollider:
@@ -39045,8 +38646,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8556514057792864611}
 --- !u!65 &5405559477479170193
 BoxCollider:
@@ -39719,8 +39318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 611874478489757344}
 --- !u!65 &2253900460733562910
 BoxCollider:
@@ -39790,8 +39387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7217232868090268414}
 --- !u!65 &8801703224607264806
 BoxCollider:
@@ -39861,8 +39456,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8355684408691901203}
 --- !u!65 &9197597190375385573
 BoxCollider:
@@ -40018,8 +39611,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5515937847293047357}
 --- !u!65 &363492269186080492
 BoxCollider:
@@ -40466,8 +40057,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5725443344966581434}
 --- !u!65 &4182532477718459632
 BoxCollider:
@@ -40885,8 +40474,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5899703618623973099}
 --- !u!65 &727500726453585399
 BoxCollider:
@@ -41115,8 +40702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7087673979028106147}
 --- !u!65 &8597924343073759551
 BoxCollider:
@@ -41272,8 +40857,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 207246433394991777}
 --- !u!65 &1976371780471728165
 BoxCollider:
@@ -41343,8 +40926,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 449156742265546768}
 --- !u!65 &3665107988648910154
 BoxCollider:
@@ -41676,8 +41257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7860198889995443690}
 --- !u!65 &8787849024851459950
 BoxCollider:
@@ -41747,8 +41326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4679384240768480751}
 --- !u!65 &7469412920981950875
 BoxCollider:
@@ -42252,8 +41829,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5316076099733983886}
 --- !u!65 &1487446933657875878
 BoxCollider:
@@ -42528,8 +42103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4710471082146770486}
 --- !u!65 &6853233455795722701
 BoxCollider:
@@ -42599,8 +42172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2712655654316672631}
 --- !u!65 &1387450522204721840
 BoxCollider:
@@ -42842,8 +42413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8626065535963859112}
 --- !u!65 &4075434212082651672
 BoxCollider:
@@ -43204,8 +42773,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5196539852799829820}
 --- !u!65 &1021209277919443575
 BoxCollider:
@@ -43361,8 +42928,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4749910038342310420}
 --- !u!65 &8352482338144952925
 BoxCollider:
@@ -43518,8 +43083,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8317132443901502794}
 --- !u!65 &4534426818419303854
 BoxCollider:
@@ -43967,8 +43530,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 5763788528345619586}
 --- !u!65 &3297440778263277035
 BoxCollider:
@@ -44210,8 +43771,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 336718171405740322}
 --- !u!65 &2062831744414183345
 BoxCollider:
@@ -44625,8 +44184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3573675915755670778}
 --- !u!65 &6655815597540213226
 BoxCollider:
@@ -44696,8 +44253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1181042856084483346}
 --- !u!65 &1764748537721687360
 BoxCollider:
@@ -44767,8 +44322,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8895284553390447948}
 --- !u!65 &3849116851507911379
 BoxCollider:
@@ -44884,8 +44437,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 4962600948533578401}
 --- !u!65 &7416972343248789240
 BoxCollider:
@@ -44955,8 +44506,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1720497074040643986}
 --- !u!65 &9161503624251619510
 BoxCollider:
@@ -45057,8 +44606,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7286523496112764474}
 --- !u!65 &3717195618975271628
 BoxCollider:
@@ -45128,8 +44675,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 7477113932261064920}
 --- !u!65 &6267065498484840009
 BoxCollider:
@@ -45371,8 +44916,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8922632029865323196}
 --- !u!65 &2047074498943270149
 BoxCollider:
@@ -45734,8 +45277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1474637224191199246}
 --- !u!65 &5880074753377377788
 BoxCollider:
@@ -45805,8 +45346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6902986716478305025}
 --- !u!65 &2971780520162378289
 BoxCollider:
@@ -45962,8 +45501,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6580043907230177943}
 --- !u!65 &8512268283477517114
 BoxCollider:
@@ -46119,8 +45656,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2430681395781071022}
 --- !u!65 &6366513950067852339
 BoxCollider:
@@ -46448,8 +45983,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 3463915921188903345}
 --- !u!65 &86566271023346519
 BoxCollider:
@@ -46519,8 +46052,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 8223024689340797534}
 --- !u!65 &4741769586875330927
 BoxCollider:
@@ -46590,8 +46121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 2722409142492255752}
 --- !u!65 &4315456457635998279
 BoxCollider:
@@ -46661,8 +46190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 1
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 1224342383552361288}
 --- !u!65 &7500761169719917013
 BoxCollider:
@@ -46732,8 +46259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeColors: 0
-  pos: {x: 0, y: 0, z: 0}
-  scale: {x: 0, y: 0, z: 0}
   meshRenderer: {fileID: 6415060783887688964}
 --- !u!65 &3272487612466211890
 BoxCollider:

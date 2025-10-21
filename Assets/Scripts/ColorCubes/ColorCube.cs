@@ -21,14 +21,14 @@ public class ColorCube : MonoBehaviour
     public Vector3 Scale => scale;
     public Vector3 Pos => pos;
 
-    // public Vector3 TargetPos
-    // {
-    //     get
-    //     {
-    //         if (_isMoving) return _moveTarget;
-    //         return pos;
-    //     }
-    // }
+    public Vector3 TargetPos
+    {
+        get
+        {
+            if (_isMoving) return _moveTarget;
+            return pos;
+        }
+    }
 
     private Collider _collider;
 
@@ -43,7 +43,7 @@ public class ColorCube : MonoBehaviour
         pos = transform.position;
         scale = transform.localScale;
         _collider = GetComponent<Collider>();
-        //_moveTarget = pos;
+        _moveTarget = pos;
     }
 
     private void Start()
@@ -139,11 +139,14 @@ public class ColorCube : MonoBehaviour
 
     public void MoveForwardWithDelay(float newZ)
     {
-        pos.z = newZ;
+        _isMoving = true;
+        _moveTarget.z = newZ;
+        
         transform.DOMoveZ(newZ, 0.15f)
             .SetEase(Ease.OutSine)
             .OnComplete(() =>
             {
+                pos.z = newZ;
                 Vector3 wobbleDir = transform.forward * 0.1f;
                 transform.DOPunchPosition(-wobbleDir, 0.15f, vibrato: 2, elasticity: 0.5f)
                     .SetEase(Ease.OutBounce)

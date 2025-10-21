@@ -74,7 +74,7 @@ public class MergeManager : MonoBehaviour
         centerPlayer.CurrentState = PlayerState.Merging;
         rightPlayer.CurrentState = PlayerState.Merging;
 
-        Invoke(nameof(PlayMergeSound), 0.3f);
+        Invoke(nameof(PlayMergeSound), 0.5f);
 
         // animation sequence
         Sequence seq = DOTween.Sequence();
