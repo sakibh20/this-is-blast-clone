@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform levelRoot;
 
     [SerializeField] private List<Renderer> levelThemesRenderer;
+    [SerializeField] private List<SpriteRenderer> levelThemesSprites;
     [SerializeField] private List<Image> levelThemesImages;
 
     [Header("UI References")]
@@ -52,12 +53,25 @@ public class LevelManager : MonoBehaviour
         {
             foreach (Image image in levelThemesImages)
             {
-                image.color = _currentLevelInstance.CustomColor;
+                Color baseColor = image.color;
+                image.color = baseColor * _currentLevelInstance.CustomColor;
+                
+                //ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.1f);
+            }            
+            
+            foreach (SpriteRenderer renderer1 in levelThemesSprites)
+            {
+                ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.3f);
+            }
+            
+            foreach (SpriteRenderer renderer1 in _currentLevelInstance.LevelThemesSprites)
+            {
+                ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.5f);
             }
 
             foreach (Renderer renderer1 in levelThemesRenderer)
             {
-                renderer1.material.color = _currentLevelInstance.CustomColor;
+                ColorUtils.ApplyThemeTint(renderer1.material, _currentLevelInstance.CustomColor, 1f);
             }
         }
     }
@@ -139,7 +153,16 @@ public class LevelManager : MonoBehaviour
 
         PlayerPrefs.SetInt(levelPrefKey, _currentLevelIndex);
         PlayerPrefs.Save();
+        
+        Invoke(nameof(ClearCurrentLevel), 1.0f);
     }
+
+    private void ClearCurrentLevel()
+    {
+        if (_currentLevelInstance != null)
+            Destroy(_currentLevelInstance.gameObject);
+    }
+    
     public void LoadNextLevel()
     {
         uiManager.ShowGameUi();
