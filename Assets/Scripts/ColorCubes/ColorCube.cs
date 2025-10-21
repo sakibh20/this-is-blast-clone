@@ -169,5 +169,6 @@ public enum CubeColors
     Red,
     Blue,
     Green,
-    Orange
+    Orange,
+    Surprise
 }

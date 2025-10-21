@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float inactiveDarkenAmount = 0.4f;
     [SerializeField] private Color32 activeAmmoColor;
     [SerializeField] private Color32 inactiveAmmoColor;
+
+    [Space]
+    [SerializeField] private bool isSurpriseShooter;
     
     public int AmmoCount => ammoCount;
     public CubeColors Color => cubeColors;
@@ -57,7 +60,14 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        UpdateColorCube();
+        
         OnChangedCurrentState();
+
+        if (isSurpriseShooter)
+        {
+            HideSelf();
+        }
     }
 
     private void Update()
@@ -100,12 +110,27 @@ public class Player : MonoBehaviour
     [ContextMenu("Update Player")]
     private void UpdateColorCube()
     {
+        Reveal();
+        ammoText.gameObject.SetActive(true);
+        UpdateAmmoCount();
+    }
+
+    [ContextMenu("HideSelf")]
+    private void HideSelf()
+    {
+        ammoText.gameObject.SetActive(false);
+        foreach (MeshRenderer meshRenderer in allRenderers)
+        {
+            meshRenderer.material = ReferenceManager.Instance.GetMaterialForColor(CubeColors.Surprise) ?? meshRenderer.material;
+        }
+    }
+
+    private void Reveal()
+    {
         foreach (MeshRenderer meshRenderer in allRenderers)
         {
             meshRenderer.material = ReferenceManager.Instance.GetMaterialForColor(cubeColors) ?? meshRenderer.material;
         }
-
-        UpdateAmmoCount();
     }
 
     private void OnChangedCurrentState()
@@ -113,6 +138,7 @@ public class Player : MonoBehaviour
         if (currentState == PlayerState.ReadyToMove)
         {
             ShootActive();
+            UpdateColorCube();
         }
         else if (currentState == PlayerState.ReadyToShoot)
         {

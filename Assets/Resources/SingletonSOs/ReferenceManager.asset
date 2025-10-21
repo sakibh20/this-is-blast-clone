@@ -23,3 +23,5 @@ MonoBehaviour:
     colorMat: {fileID: 2100000, guid: 97bc7a9f8f210b949b4bae1cf29c8f90, type: 2}
   - cubeColor: 4
     colorMat: {fileID: 2100000, guid: 74be5862decad394c93936763e635f63, type: 2}
+  - cubeColor: 5
+    colorMat: {fileID: 2100000, guid: d833db2cb2c429e49be0eb11d7677ebe, type: 2}
