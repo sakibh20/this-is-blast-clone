@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
     #region Main Animations
 
     [ContextMenu("ShowLevelCompleteUI")]
-    public void ShowLevelCompleteUI(int level)
+    public void ShowLevelCompleteUI(int level, int bonus)
     { 
         levelText.SetText("Level " + (level+1));
         SoundManager.Instance.PlayWinSound();
@@ -85,7 +85,7 @@ public class UIManager : MonoBehaviour
         AnimateVictoryText();
         AnimateNextFeaturePanel();
         Invoke(nameof(AnimateCoinsToHUD), 1.5f);
-        AnimateHUDCoinFeedback(10);
+        AnimateHUDCoinFeedback(bonus);
     }
 
     [ContextMenu("FadeInMainPanel")]

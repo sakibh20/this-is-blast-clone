@@ -9,8 +9,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     
     [Header("Level Setup")]
-    [SerializeField] private List<GameObject> levelPrefabs = new List<GameObject>();
+    [SerializeField] private List<Level> levelPrefabs = new List<Level>();
     [SerializeField] private Transform levelRoot;
+
+    [SerializeField] private List<Renderer> levelThemesRenderer;
+    [SerializeField] private List<Image> levelThemesImages;
 
     [Header("UI References")]
     [SerializeField] private TMP_Text levelText;
@@ -24,7 +27,7 @@ public class LevelManager : MonoBehaviour
     
     private int _currentLevelIndex;
     
-    private GameObject _currentLevelInstance;
+    private Level _currentLevelInstance;
     
     private int _totalCubes;
     private int _destroyedCubes;
@@ -41,6 +44,22 @@ public class LevelManager : MonoBehaviour
         }
 
         LoadNextLevel();
+    }
+
+    private void UpdateLevel()
+    {
+        if (_currentLevelInstance.UseCustomTheme)
+        {
+            foreach (Image image in levelThemesImages)
+            {
+                image.color = _currentLevelInstance.CustomColor;
+            }
+
+            foreach (Renderer renderer1 in levelThemesRenderer)
+            {
+                renderer1.material.color = _currentLevelInstance.CustomColor;
+            }
+        }
     }
 
     private void LoadLevelIndex()
@@ -67,8 +86,10 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        GameObject prefab = levelPrefabs[_currentLevelIndex];
+        Level prefab = levelPrefabs[_currentLevelIndex];
         _currentLevelInstance = Instantiate(prefab, levelRoot);
+
+        UpdateLevel();
     }
 
     private void UpdateLevelText()
@@ -108,7 +129,7 @@ public class LevelManager : MonoBehaviour
     
     private void OnLevelComplete()
     {
-        uiManager.ShowLevelCompleteUI(_currentLevelIndex);
+        uiManager.ShowLevelCompleteUI(_currentLevelIndex, _currentLevelInstance.LevelBonus);
         
         _currentLevelIndex++;
         if (_currentLevelIndex >= levelPrefabs.Count)

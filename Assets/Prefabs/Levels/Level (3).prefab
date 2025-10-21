@@ -3270,12 +3270,14 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 4402057322205445151}
   - {fileID: 3893875334103478587}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
     rgba: 2164260863
+  isSurpriseShooter: 0
 --- !u!114 &6477613512913840289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4317,12 +4319,14 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 4322948087817488663}
   - {fileID: 3522060452534289459}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
     rgba: 2164260863
+  isSurpriseShooter: 0
 --- !u!114 &6848873897892863401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12025,12 +12029,14 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 1640848315553243923}
   - {fileID: 2151484678753463863}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
     rgba: 2164260863
+  isSurpriseShooter: 0
 --- !u!114 &8230137267152287661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13299,12 +13305,14 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 7999822654005151871}
   - {fileID: 7213633428607681883}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
     rgba: 2164260863
+  isSurpriseShooter: 0
 --- !u!114 &862211410054094017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15061,12 +15069,14 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 7360888666263220061}
   - {fileID: 7870546183868097145}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
     rgba: 2164260863
+  isSurpriseShooter: 0
 --- !u!114 &204075792787373027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15412,6 +15422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7134317688165096587}
+  - component: {fileID: 7153302105001689502}
   m_Layer: 0
   m_Name: Level (3)
   m_TagString: Untagged
@@ -15439,6 +15450,20 @@ Transform:
   - {fileID: 3929315783253290397}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7153302105001689502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545787089728211850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c39b02cfb948e40b4afbfaafc24419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelBonus: 10
+  isHard: 0
 --- !u!1 &5551005082749704219
 GameObject:
   m_ObjectHideFlags: 0
@@ -15676,12 +15701,14 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 6920240174104709451}
   - {fileID: 7716721106437325935}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
     rgba: 2164260863
+  isSurpriseShooter: 0
 --- !u!114 &359026975549922805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19289,12 +19316,14 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 8327618141299949778}
   - {fileID: 8687243158089272822}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
     rgba: 2164260863
+  isSurpriseShooter: 0
 --- !u!114 &1685331937490752620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21953,12 +21982,14 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 5033235417816783584}
   - {fileID: 5676586953432143812}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
     rgba: 2164260863
+  isSurpriseShooter: 0
 --- !u!114 &2390144858328911454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25133,12 +25164,14 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 6394634884553228329}
   - {fileID: 6025996346317540621}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
     rgba: 2164260863
+  isSurpriseShooter: 0
 --- !u!114 &4344964736179524759
 MonoBehaviour:
   m_ObjectHideFlags: 0
