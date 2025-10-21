@@ -13,6 +13,7 @@ public class ColorCube : MonoBehaviour
     private float _wobbleDuration = 0.15f;
 
     public Vector3 pos;
+    public Vector3 scale;
 
     private Collider _collider;
     
@@ -26,7 +27,10 @@ public class ColorCube : MonoBehaviour
     private void Awake()
     {
         pos = transform.position;
+        scale = transform.localScale;
         _collider = GetComponent<Collider>();
+
+        UpdateVisibility();
     }
 
     private void OnDestroy()
@@ -35,6 +39,22 @@ public class ColorCube : MonoBehaviour
         CancelInvoke();
 
         transform.DOKill();
+    }
+
+    private void UpdateVisibility()
+    {
+        bool visible = pos.y < 0.3f ||  pos.z < 5.4;
+        
+        gameObject.SetActive(visible);
+        
+        if (!visible)
+        {
+            transform.localScale = Vector3.zero;
+        }
+        else
+        {
+            transform.DOScale(scale, 0.1f).SetEase(Ease.OutQuad);
+        }
     }
 
     [ContextMenu("Update ColorCube")]
@@ -114,6 +134,7 @@ public class ColorCube : MonoBehaviour
                 transform.DOPunchPosition(-wobbleDir, 0.15f, vibrato: 2, elasticity: 0.5f)
                     .SetEase(Ease.OutBounce)
                     .SetId("cubeMoveWobble");
+                UpdateVisibility();
             }).SetDelay(_hideDuration);
         
         //StartCoroutine(MoveForwardRoutine(newZ));

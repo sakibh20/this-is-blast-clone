@@ -51,7 +51,7 @@ public class MergeManager : MonoBehaviour
         centerPlayer.CurrentState = PlayerState.Merging;
         rightPlayer.CurrentState = PlayerState.Merging;
         
-        Invoke(nameof(PlayMergeSound), 0.5f);
+        Invoke(nameof(PlayMergeSound), 0.8f);
 
         // Lift all three up slightly
         Sequence seq = DOTween.Sequence();
@@ -69,8 +69,8 @@ public class MergeManager : MonoBehaviour
         seq.AppendInterval(0.1f);
 
         // Move left & right toward center
-        seq.Append(leftPlayer.transform.DOMove(centerPlayer.transform.position + new Vector3(0, liftHeight, 0), mergeDuration).SetEase(mergeEase));
-        seq.Join(rightPlayer.transform.DOMove(centerPlayer.transform.position  + new Vector3(0, liftHeight, 0), mergeDuration).SetEase(mergeEase));
+        seq.Append(leftPlayer.transform.DOMove(centerPlayer.transform.position + new Vector3(0, liftHeight, 0), mergeDuration).SetEase(Ease.InExpo));
+        seq.Join(rightPlayer.transform.DOMove(centerPlayer.transform.position  + new Vector3(0, liftHeight, 0), mergeDuration).SetEase(Ease.InExpo));
 
         // Merge ammo counts
         seq.AppendCallback(() =>

@@ -66,6 +66,8 @@ public class PlayerMovement : MonoBehaviour
     public void MoveOut()
     {
         if (leftTarget == null || rightTarget == null) return;
+        
+        _player.TargetDoc.ReleaseDoc();
 
         // 1️⃣ Find closest target
         Transform target = (Vector3.Distance(transform.position, leftTarget.position) <
@@ -82,7 +84,6 @@ public class PlayerMovement : MonoBehaviour
             .SetEase(Ease.OutQuad)
             .OnComplete(() =>
             {
-                _player.TargetDoc.ReleaseDoc();
                 // 3️⃣ Jump move to target with multiple jumps
                 Sequence moveSeq = DOTween.Sequence();
 
