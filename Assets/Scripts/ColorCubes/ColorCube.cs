@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ColorCube : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ColorCube : MonoBehaviour
     private float _wobbleStrengthPos = 0.15f;
     private float _wobbleStrengthRot = 15;
     private float _wobbleDuration = 0.15f;
+
+    public Vector3 pos;
 
     private Collider _collider;
     
@@ -22,6 +25,7 @@ public class ColorCube : MonoBehaviour
 
     private void Awake()
     {
+        pos = transform.position;
         _collider = GetComponent<Collider>();
     }
 
@@ -104,6 +108,7 @@ public class ColorCube : MonoBehaviour
             .SetEase(Ease.OutSine)
             .OnComplete(() =>
             {
+                pos = transform.position;
                 // Small position wobble
                 Vector3 wobbleDir = transform.forward * 0.1f;
                 transform.DOPunchPosition(-wobbleDir, 0.15f, vibrato: 2, elasticity: 0.5f)

@@ -136,7 +136,7 @@ public class CubeColumn
             for (int i = 1; i < cubes.Count; i++)
             {
                 var cube = cubes[i];
-                float newZ = cubes[i - 1].transform.position.z;
+                float newZ = cubes[i - 1].pos.z;
                 cube.MoveForwardWithDelay(newZ);
             }
         }

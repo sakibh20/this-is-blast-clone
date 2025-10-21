@@ -72,6 +72,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Color Cube
       objectReference: {fileID: 0}
+    - target: {fileID: 3534690921375643239, guid: 167cdf7ea8974a34cb0c013f1d51c705, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762930487206985463, guid: 167cdf7ea8974a34cb0c013f1d51c705, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3386122030100667835, guid: d09c88d24b3ceae4f8cecccbf4a657a9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
