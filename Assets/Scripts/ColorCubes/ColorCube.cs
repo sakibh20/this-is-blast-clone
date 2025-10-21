@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -29,7 +30,10 @@ public class ColorCube : MonoBehaviour
         pos = transform.position;
         scale = transform.localScale;
         _collider = GetComponent<Collider>();
+    }
 
+    private void Start()
+    {
         UpdateVisibility();
     }
 

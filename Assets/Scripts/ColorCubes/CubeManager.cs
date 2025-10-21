@@ -23,13 +23,10 @@ public class CubeManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-    }
-
-    private void Start()
-    {
+        
         PopulateColumns();
     }
-
+    
     private void PopulateColumns()
     {
         allColumns.Clear();
