@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using UnityEditor;
 using UnityEngine;
 
 public class MergeManager : MonoBehaviour
@@ -101,7 +102,7 @@ public class MergeManager : MonoBehaviour
         seq.AppendInterval(mergeDuration);
         seq.AppendCallback(() =>
         {
-            int totalAmmo = leftPlayer.AmmoCount + centerPlayer.AmmoCount + rightPlayer.AmmoCount;
+            int totalAmmo = leftPlayer.AmmoCount + rightPlayer.AmmoCount;
             centerPlayer.UpdateAmmoCount(totalAmmo);
 
             // Cleanup

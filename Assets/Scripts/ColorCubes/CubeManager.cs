@@ -111,8 +111,8 @@ public class CubeManager : MonoBehaviour
             return;
 
         // Was this cube one of the front-most cubes in the column (lowest Z)?
-        float minZ = column.cubes.Min(c => c.pos.z);
-        bool wasFrontCube = Mathf.Abs(cube.pos.z - minZ) < 0.01f;
+        float minZ = column.cubes.Min(c => c.Pos.z);
+        bool wasFrontCube = Mathf.Abs(cube.Pos.z - minZ) < 0.01f;
 
         if (wasFrontCube)
         {
@@ -123,7 +123,6 @@ public class CubeManager : MonoBehaviour
         // Now remove it after all logic that depends on its position
         column.cubes.Remove(cube);
     }
-
 }
 
 [System.Serializable]
@@ -141,33 +140,22 @@ public class CubeColumn
         if (cubes.Count == 0)
             return;
 
-        float destroyedZ = destroyedCube.pos.z;
+        float destroyedZ = destroyedCube.Pos.z;
 
         // Get all cubes that are behind (higher Z) than the destroyed one
         var behindCubes = cubes
-            .Where(c => c.pos.z > destroyedZ)
-            .OrderBy(c => c.pos.z)
+            .Where(c => c.Pos.z > destroyedZ)
+            .OrderBy(c => c.Pos.z)
             .ToList();
 
         if (behindCubes.Count == 0)
             return;
-
-        // // Calculate Z offset (distance to move forward)
-        // // We use the gap between destroyedZ and the next cube layer as step size
-        // float nextZ = behindCubes.First().pos.z;
-        // float zStep = nextZ - destroyedZ;
-        //
-        // // Move each behind cube forward by one step (keep spacing consistent)
-        // foreach (var cube in behindCubes)
-        // {
-        //     float targetZ = cube.pos.z - zStep;
-        //     cube.MoveForwardWithDelay(targetZ);
-        // }
-
-        for (int i = 0; i < behindCubes.Count; i++)
+        
+        for (int i = behindCubes.Count - 1; i >= 0; i--)
         {
-            if(i == 0) behindCubes[i].MoveForwardWithDelay(destroyedCube.pos.z);
-            else behindCubes[i].MoveForwardWithDelay(behindCubes[i-1].pos.z);
+            float targetZ = i == 0 ? destroyedCube.Pos.z : behindCubes[i - 1].Pos.z;
+
+            behindCubes[i].MoveForwardWithDelay(targetZ);
         }
     }
 }
