@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
         UpdateTrail(true);
         
         float duration = Vector3.Distance(transform.position, target.transform.position) / speed;
-        _moveTween = transform.DOMove(target.transform.position - new Vector3(0,0,0.4f), duration)
+        _moveTween = transform.DOMove(target.transform.position - new Vector3(0,0,0.2f), duration)
             .SetEase(Ease.Linear)
             .OnComplete(OnReachedTarget);
         

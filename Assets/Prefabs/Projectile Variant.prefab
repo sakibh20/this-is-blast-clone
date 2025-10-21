@@ -9766,6 +9766,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8967250132498626795, guid: 9ed3251b488a46347ac754b2361d98d5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9056098918854289494}
+    - targetCorrespondingSourceObject: {fileID: 8967250132498626795, guid: 9ed3251b488a46347ac754b2361d98d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 166240966910495547}
   m_SourcePrefab: {fileID: 100100000, guid: 9ed3251b488a46347ac754b2361d98d5, type: 3}
 --- !u!1 &1630136138176884474 stripped
 GameObject:
@@ -9915,6 +9918,27 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!135 &166240966910495547
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630136138176884474}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2149545794158408768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8591111965967376977, guid: 9ed3251b488a46347ac754b2361d98d5, type: 3}

@@ -789,8 +789,8 @@ MonoBehaviour:
   levelText: {fileID: 1430329114}
   progressBar: {fileID: 1331023510}
   levelPrefKey: CurrentLevel
-  test: 1
-  testLevel: 8
+  test: 0
+  testLevel: 0
 --- !u!1 &176963468
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,7 +3482,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5616,7 +5616,7 @@ MonoBehaviour:
   coinClip: {fileID: 8300000, guid: c30f108859d40e24fb777f6cf0553295, type: 3}
   mergeClip: {fileID: 8300000, guid: 273e9ff0fbaf7d441b0cdc44c5bd9a4e, type: 3}
   gameDefaultSound: {fileID: 8300000, guid: 8ee41b59efe94a24c8c1b9731ec149a1, type: 3}
-  gameHardSound: {fileID: 0}
+  gameHardSound: {fileID: 8300000, guid: 01255daccb8aa7a4f9e6665c8688d944, type: 3}
   audioSource: {fileID: 1002583114}
 --- !u!1 &1603359566
 GameObject:

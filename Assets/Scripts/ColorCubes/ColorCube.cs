@@ -1,14 +1,15 @@
 using System;
 using DG.Tweening;
+using UnityEditor;
 using UnityEngine;
 
 public class ColorCube : MonoBehaviour
 {
     [SerializeField] private CubeColors cubeColors;
-    private float _hideDuration = 0.2f;
+    private float _hideDuration = 0.15f;
     private float _feedbackStrength = 0.2f;
 
-    private float _wobbleStrengthPos = 0.15f;
+    private float _wobbleStrengthPos = 0.05f;
     private float _wobbleStrengthRot = 15;
     private float _wobbleDuration = 0.15f;
 
@@ -21,15 +22,6 @@ public class ColorCube : MonoBehaviour
     public Vector3 Scale => scale;
     public Vector3 Pos => pos;
 
-    public Vector3 TargetPos
-    {
-        get
-        {
-            if (_isMoving) return _moveTarget;
-            return pos;
-        }
-    }
-
     private Collider _collider;
 
     public CubeColors Color => cubeColors;
@@ -38,12 +30,14 @@ public class ColorCube : MonoBehaviour
 
     public bool IsReserved { get; set; } = false;
 
+    private float _interactionCoolDownTime = 2f;
+    private float _lastInteractionTime = -999f;
+
     private void Awake()
     {
         pos = transform.position;
         scale = transform.localScale;
         _collider = GetComponent<Collider>();
-        _moveTarget = pos;
     }
 
     private void Start()
@@ -81,45 +75,38 @@ public class ColorCube : MonoBehaviour
         meshRenderer.material = ReferenceManager.Instance.GetMaterialForColor(cubeColors) ?? meshRenderer.material;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("projectile")) return;
-
-        Projectile projectile = other.GetComponent<Projectile>();
-        if (projectile == null) return;
-
-        // Avoid reacting if this cube *is* the target
-        if (projectile.TargetCube.GetInstanceID() != GetInstanceID())
-        {
-            Vector3 hitDir = (transform.position - projectile.transform.position).normalized;
-            DoCollisionFeedback(hitDir);
-        }
-    }
-
-    // private void DoCollisionFeedback(Transform target)
+    // private void OnTriggerEnter(Collider other)
     // {
-    //     //transform.DOKill();
-    //
-    //     Vector3 recoilDir = target.transform.forward * _feedbackStrength;
-    //     transform.DOPunchPosition(recoilDir, 0.2f, vibrato: 1, elasticity: 0.6f);
+    //     if (!other.CompareTag("projectile")) return;
+    //     
+    //     Projectile projectile = other.GetComponent<Projectile>();
+    //     if (projectile == null) return;
+    //     
+    //     if (Time.time - _lastInteractionTime < _interactionCoolDownTime)
+    //         return;
+    //     
+    //     // Avoid reacting if this cube *is* the target
+    //     if (projectile.TargetCube != null && projectile.TargetCube != this)
+    //     {
+    //         Vector3 hitDir = (transform.position - projectile.transform.position).normalized;
+    //         DoCollisionFeedback(hitDir);
+    //     }
     // }
 
     private void DoCollisionFeedback(Vector3 hitDir)
     {
-        // --- POSITION WOBBLE ---
         Vector3 punchPos = hitDir * _wobbleStrengthPos;
-        transform.DOPunchPosition(punchPos, _wobbleDuration, vibrato: 2, elasticity: 0.4f)
+        transform.DOPunchPosition(punchPos, _wobbleDuration, vibrato: 1, elasticity: 0.4f)
             .SetEase(Ease.OutQuad)
             .SetUpdate(UpdateType.Normal, true)
             .SetId("cubeImpactPos");
-
-        // --- ROTATION WOBBLE ---
+        
         // Use the hit direction projected on the Y axis for a “twist” effect
         Vector3 localHitDir = transform.InverseTransformDirection(hitDir);
         float rotAngle = _wobbleStrengthRot * Mathf.Sign(localHitDir.x); // rotate toward hit direction
         Vector3 punchRot = new Vector3(0f, rotAngle, 0f);
 
-        transform.DOPunchRotation(punchRot, _wobbleDuration, vibrato: 2, elasticity: 0.6f)
+        transform.DOPunchRotation(punchRot, _wobbleDuration, vibrato: 1, elasticity: 0.4f)
             .SetEase(Ease.OutQuad)
             .SetUpdate(UpdateType.Normal, true)
             .SetId("cubeImpactRot");
@@ -134,14 +121,13 @@ public class ColorCube : MonoBehaviour
 
         SoundManager.Instance.PlayPopSound();
 
+        transform.DOKill();
+
         transform.DOScale(Vector3.zero, _hideDuration).OnComplete(() => { Destroy(gameObject); });
     }
 
     public void MoveForwardWithDelay(float newZ)
     {
-        _isMoving = true;
-        _moveTarget.z = newZ;
-        
         transform.DOMoveZ(newZ, 0.15f)
             .SetEase(Ease.OutSine)
             .OnComplete(() =>
@@ -150,14 +136,29 @@ public class ColorCube : MonoBehaviour
                 Vector3 wobbleDir = transform.forward * 0.1f;
                 transform.DOPunchPosition(-wobbleDir, 0.15f, vibrato: 2, elasticity: 0.5f)
                     .SetEase(Ease.OutBounce)
-                    .SetId("cubeMoveWobble")
-                    .OnComplete(() =>
-                    {
-                        _isMoving = false;
-                    });
+                    .SetId("cubeMoveWobble");
                 UpdateVisibility();
             }).SetDelay(_hideDuration);
     }
+    
+    // public void MoveForwardWithDelay(float newZ)
+    // {
+    //     transform.DOKill();
+    //     Sequence seq = DOTween.Sequence();
+    //     
+    //     seq.Append(transform.DOMoveZ(newZ, 0.15f)
+    //         .SetEase(Ease.OutSine)
+    //         .OnComplete(() =>
+    //         {
+    //             pos.z = newZ;
+    //             UpdateVisibility();
+    //         }));
+    //     
+    //     // seq.Join(transform.DOLocalRotate(Vector3.zero, 0.15f, RotateMode.FastBeyond360)
+    //     //     .SetEase(Ease.OutQuad));
+    //
+    //     seq.SetDelay(_hideDuration);
+    // }
 }
 
 public enum CubeColors
