@@ -20,10 +20,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Color32 activeAmmoColor;
     [SerializeField] private Color32 inactiveAmmoColor;
     
-    private static readonly int ColorProp = Shader.PropertyToID("_Color");
-    private Color _originalColor;
-    private bool _isInactive;
-    
     public int AmmoCount => ammoCount;
     public CubeColors Color => cubeColors;
     
@@ -107,7 +103,6 @@ public class Player : MonoBehaviour
         foreach (MeshRenderer meshRenderer in allRenderers)
         {
             meshRenderer.material = ReferenceManager.Instance.GetMaterialForColor(cubeColors) ?? meshRenderer.material;
-            _originalColor = meshRenderer.material.GetColor(ColorProp);
         }
 
         UpdateAmmoCount();

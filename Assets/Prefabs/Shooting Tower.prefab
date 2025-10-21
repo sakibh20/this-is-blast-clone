@@ -287,12 +287,13 @@ MonoBehaviour:
   allRenderers:
   - {fileID: 824994500320429628}
   - {fileID: 30422470566791960}
+  inactiveDarkenAmount: 0.4
   activeAmmoColor:
     serializedVersion: 2
     rgba: 4294967295
   inactiveAmmoColor:
     serializedVersion: 2
-    rgba: 2164260863
+    rgba: 872415231
 --- !u!114 &8034664472600220290
 MonoBehaviour:
   m_ObjectHideFlags: 0
