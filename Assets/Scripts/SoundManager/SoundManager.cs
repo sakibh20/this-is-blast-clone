@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip coinClip;
     [SerializeField] private AudioClip mergeClip;
     [SerializeField] private AudioClip gameDefaultSound;
+    [SerializeField] private AudioClip gameHardSound;
 
     [SerializeField] private AudioSource audioSource;
     
@@ -31,11 +32,17 @@ public class SoundManager : MonoBehaviour
         PlayGameDefaultSound();
     }
 
-    private void PlayGameDefaultSound()
+    public void PlayGameDefaultSound()
     {
         audioSource.clip = gameDefaultSound;
         audioSource.Play();
-    }    
+    } 
+    
+    public void PlayGameHardSound()
+    {
+        audioSource.clip = gameHardSound;
+        audioSource.Play();
+    } 
         
     public void PlayPopSound()
     {

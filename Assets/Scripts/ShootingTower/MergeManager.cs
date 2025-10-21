@@ -81,13 +81,6 @@ public class MergeManager : MonoBehaviour
             leftPlayer.Shooter.Release();
             rightPlayer.Shooter.Release();
             centerPlayer.Shooter.Release();
-
-            //EditorApplication.isPaused = true;
-
-            // Optionally play merge FX / SFX
-            //centerPlayer.PlayMergeFX();
-
-            // Destroy or disable left and right players
             
             Destroy(leftPlayer.gameObject);
             Destroy(rightPlayer.gameObject);

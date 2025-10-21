@@ -132,7 +132,7 @@ public class ColorCube : MonoBehaviour
             .SetEase(Ease.OutSine)
             .OnComplete(() =>
             {
-                pos = transform.position;
+                pos.z = newZ;
                 // Small position wobble
                 Vector3 wobbleDir = transform.forward * 0.1f;
                 transform.DOPunchPosition(-wobbleDir, 0.15f, vibrato: 2, elasticity: 0.5f)

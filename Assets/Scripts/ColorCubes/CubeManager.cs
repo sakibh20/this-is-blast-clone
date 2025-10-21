@@ -111,8 +111,8 @@ public class CubeManager : MonoBehaviour
             return;
 
         // Was this cube one of the front-most cubes in the column (lowest Z)?
-        float minZ = column.cubes.Min(c => c.transform.position.z);
-        bool wasFrontCube = Mathf.Abs(cube.transform.position.z - minZ) < 0.01f;
+        float minZ = column.cubes.Min(c => c.pos.z);
+        bool wasFrontCube = Mathf.Abs(cube.pos.z - minZ) < 0.01f;
 
         if (wasFrontCube)
         {
@@ -152,16 +152,22 @@ public class CubeColumn
         if (behindCubes.Count == 0)
             return;
 
-        // Calculate Z offset (distance to move forward)
-        // We use the gap between destroyedZ and the next cube layer as step size
-        float nextZ = behindCubes.First().pos.z;
-        float zStep = nextZ - destroyedZ;
+        // // Calculate Z offset (distance to move forward)
+        // // We use the gap between destroyedZ and the next cube layer as step size
+        // float nextZ = behindCubes.First().pos.z;
+        // float zStep = nextZ - destroyedZ;
+        //
+        // // Move each behind cube forward by one step (keep spacing consistent)
+        // foreach (var cube in behindCubes)
+        // {
+        //     float targetZ = cube.pos.z - zStep;
+        //     cube.MoveForwardWithDelay(targetZ);
+        // }
 
-        // Move each behind cube forward by one step (keep spacing consistent)
-        foreach (var cube in behindCubes)
+        for (int i = 0; i < behindCubes.Count; i++)
         {
-            float targetZ = cube.pos.z - zStep;
-            cube.MoveForwardWithDelay(targetZ);
+            if(i == 0) behindCubes[i].MoveForwardWithDelay(destroyedCube.pos.z);
+            else behindCubes[i].MoveForwardWithDelay(behindCubes[i-1].pos.z);
         }
     }
 }

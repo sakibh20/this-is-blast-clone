@@ -5592,6 +5592,7 @@ MonoBehaviour:
   coinClip: {fileID: 8300000, guid: c30f108859d40e24fb777f6cf0553295, type: 3}
   mergeClip: {fileID: 8300000, guid: 273e9ff0fbaf7d441b0cdc44c5bd9a4e, type: 3}
   gameDefaultSound: {fileID: 8300000, guid: 8ee41b59efe94a24c8c1b9731ec149a1, type: 3}
+  gameHardSound: {fileID: 8300000, guid: 01255daccb8aa7a4f9e6665c8688d944, type: 3}
   audioSource: {fileID: 1002583114}
 --- !u!1 &1603359566
 GameObject:

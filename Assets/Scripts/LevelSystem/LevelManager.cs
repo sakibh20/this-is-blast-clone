@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,12 +44,24 @@ public class LevelManager : MonoBehaviour
             Destroy(this);
             return;
         }
+    }
 
+    private void Start()
+    {
         LoadNextLevel();
     }
 
     private void UpdateLevel()
     {
+        if (_currentLevelInstance.IsHard)
+        {
+            SoundManager.Instance.PlayGameHardSound();
+        }
+        else
+        {
+            SoundManager.Instance.PlayGameDefaultSound();
+        }
+        
         if (_currentLevelInstance.UseCustomTheme)
         {
             foreach (Image image in levelThemesImages)
@@ -66,7 +79,7 @@ public class LevelManager : MonoBehaviour
             
             foreach (SpriteRenderer renderer1 in _currentLevelInstance.LevelThemesSprites)
             {
-                ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.5f);
+                ColorUtils.ApplyThemeTint(renderer1, _currentLevelInstance.CustomColor, 0.85f);
             }
 
             foreach (Renderer renderer1 in levelThemesRenderer)

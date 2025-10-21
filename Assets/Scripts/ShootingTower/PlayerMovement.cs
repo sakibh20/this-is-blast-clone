@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _player.CurrentState = PlayerState.ReadyToShoot;
         _player.MergeManager.CheckForMerge();
-        Debug.Log("OnReachedShootSpot!");
+        //Debug.Log("OnReachedShootSpot!");
         //
     }
 }

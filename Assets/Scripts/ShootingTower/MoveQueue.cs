@@ -25,7 +25,7 @@ public class MoveQueue : MonoBehaviour
         Doc targetDoc = docManager.GetTargetDoc();
         if (targetDoc == null)
         {
-            Debug.LogWarning("No available Doc position found!");
+            //Debug.LogWarning("No available Doc position found!");
             return;
         }
 
