@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using DG.Tweening;
-using UnityEditor;
+using UnityEngine;
 
 public class MergeManager : MonoBehaviour
 {
@@ -15,85 +13,110 @@ public class MergeManager : MonoBehaviour
 
     public void CheckForMerge()
     {
-        // Group by color of players currently on doc positions
+        // Group by color among docs with a player
         var colorGroups = docManager.AllDocs
-            .Where(d => d.IsReserved && d.CurrentPlayer != null)
+            .Where(d => d.IsReserved && d.CurrentPlayer != null && d.CurrentPlayer.CurrentState != PlayerState.Merging)
             .GroupBy(d => d.CurrentPlayer.Color);
 
         foreach (var group in colorGroups)
         {
-            var sameColorDocs = group.ToList();
+            var sameColorDocs = group
+                .OrderBy(d => d.DocTransform.position.x)
+                .ToList();
+
             if (sameColorDocs.Count < 3)
                 continue;
 
-            // Sort by X pos so we can find left, center, right
-            sameColorDocs = sameColorDocs.OrderBy(d => d.DocTransform.position.x).ToList();
+            HandleMergesForColor(sameColorDocs);
+        }
+    }
 
-            PerformMerge(sameColorDocs);
+    private void HandleMergesForColor(List<Doc> sameColorDocs)
+    {
+        // Example: if we have 4 or 5 same color players, merge in sets of 3 that are closest together
+        // We’ll handle overlapping groups gracefully.
+        List<List<Doc>> mergeSets = new List<List<Doc>>();
+
+        int index = 0;
+        while (index + 2 < sameColorDocs.Count)
+        {
+            // Always take 3 consecutive docs
+            mergeSets.Add(sameColorDocs.Skip(index).Take(3).ToList());
+            index += 3;
+        }
+
+        // If leftover docs < 3, ignore them this round.
+        foreach (var mergeSet in mergeSets)
+        {
+            PerformMerge(mergeSet);
         }
     }
 
     private void PerformMerge(List<Doc> docs)
     {
-        if (docs.Count < 3)
-            return;
-        
-        // Choose left, center, right
+        // safety
+        if (docs.Count < 3) return;
+
         Doc left = docs[0];
         Doc center = docs[1];
         Doc right = docs[2];
+
+        if (left.CurrentPlayer == null || center.CurrentPlayer == null || right.CurrentPlayer == null)
+            return;
 
         Player leftPlayer = left.CurrentPlayer;
         Player centerPlayer = center.CurrentPlayer;
         Player rightPlayer = right.CurrentPlayer;
 
+        // lock their states
         leftPlayer.CurrentState = PlayerState.Merging;
         centerPlayer.CurrentState = PlayerState.Merging;
         rightPlayer.CurrentState = PlayerState.Merging;
-        
-        Invoke(nameof(PlayMergeSound), 0.8f);
 
-        // Lift all three up slightly
+        Invoke(nameof(PlayMergeSound), 0.3f);
+
+        // animation sequence
         Sequence seq = DOTween.Sequence();
-        
-        seq.AppendInterval(0.2f);
 
-        seq.Append(leftPlayer.transform.DOMoveY(leftPlayer.transform.position.y + liftHeight, 0.2f).SetEase(Ease.OutSine));
-        seq.Join(centerPlayer.transform.DOMoveY(centerPlayer.transform.position.y + liftHeight, 0.2f).SetEase(Ease.OutSine));
-        seq.Join(rightPlayer.transform.DOMoveY(rightPlayer.transform.position.y + liftHeight, 0.2f).SetEase(Ease.OutSine));
-        
-        seq.Join(leftPlayer.transform.DOLocalRotate(Vector3.zero, 0.1f));
-        seq.Join(centerPlayer.transform.DOLocalRotate(Vector3.zero,0.1f));
-        seq.Join(rightPlayer.transform.DOLocalRotate(Vector3.zero, 0.1f));
-
+        // Lift all three up
         seq.AppendInterval(0.1f);
-
-        // Move left & right toward center
-        seq.Append(leftPlayer.transform.DOMove(centerPlayer.transform.position + new Vector3(0, liftHeight, 0), mergeDuration).SetEase(Ease.InExpo));
-        seq.Join(rightPlayer.transform.DOMove(centerPlayer.transform.position  + new Vector3(0, liftHeight, 0), mergeDuration).SetEase(Ease.InExpo));
-
-        // Merge ammo counts
         seq.AppendCallback(() =>
         {
-            int totalAmmo = leftPlayer.AmmoCount + rightPlayer.AmmoCount;
+            leftPlayer.transform.DOMoveY(leftPlayer.transform.position.y + liftHeight, 0.2f).SetEase(Ease.OutSine);
+            centerPlayer.transform.DOMoveY(centerPlayer.transform.position.y + liftHeight, 0.2f).SetEase(Ease.OutSine);
+            rightPlayer.transform.DOMoveY(rightPlayer.transform.position.y + liftHeight, 0.2f).SetEase(Ease.OutSine);
+        });
+
+        seq.AppendInterval(0.2f);
+
+        // Move left & right toward center
+        seq.AppendCallback(() =>
+        {
+            Vector3 centerTarget = centerPlayer.transform.position + new Vector3(0, liftHeight, 0);
+            leftPlayer.transform.DOMove(centerTarget, mergeDuration).SetEase(Ease.InExpo);
+            rightPlayer.transform.DOMove(centerTarget, mergeDuration).SetEase(Ease.InExpo);
+        });
+
+        // merge effect
+        seq.AppendInterval(mergeDuration);
+        seq.AppendCallback(() =>
+        {
+            int totalAmmo = leftPlayer.AmmoCount + centerPlayer.AmmoCount + rightPlayer.AmmoCount;
             centerPlayer.UpdateAmmoCount(totalAmmo);
-            
+
+            // Cleanup
             leftPlayer.Shooter.Release();
             rightPlayer.Shooter.Release();
             centerPlayer.Shooter.Release();
-            
+
+            left.ReleaseDoc();
+            right.ReleaseDoc();
+
             Destroy(leftPlayer.gameObject);
             Destroy(rightPlayer.gameObject);
 
-            // Release doc slots
-            left.ReleaseDoc();
-            right.ReleaseDoc();
-        });
-        
-        seq.Append(centerPlayer.transform.DOMoveY(0, 0.1f).SetEase(Ease.OutSine));
-        
-        seq.AppendCallback(() =>
-        {
+            // bring center back down
+            centerPlayer.transform.DOMoveY(0, 0.2f).SetEase(Ease.OutSine);
             centerPlayer.CurrentState = PlayerState.ReadyToShoot;
         });
 
@@ -102,7 +125,7 @@ public class MergeManager : MonoBehaviour
 
     private void PlayMergeSound()
     {
-        SoundManager.Instance.PlayMergeSound();
+        SoundManager.Instance?.PlayMergeSound();
     }
 
     private void OnDestroy()
