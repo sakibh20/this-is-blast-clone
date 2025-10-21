@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip shooterPopClip;
     [SerializeField] private AudioClip winClip;
     [SerializeField] private AudioClip coinClip;
+    [SerializeField] private AudioClip mergeClip;
     [SerializeField] private AudioClip gameDefaultSound;
 
     [SerializeField] private AudioSource audioSource;
@@ -54,6 +55,11 @@ public class SoundManager : MonoBehaviour
     public void PlayWinSound()
     {
         audioSource.PlayOneShot(winClip);
+    }    
+    
+    public void PlayMergeSound()
+    {
+        audioSource.PlayOneShot(mergeClip);
     }
     
     public void PlayCoinSound()

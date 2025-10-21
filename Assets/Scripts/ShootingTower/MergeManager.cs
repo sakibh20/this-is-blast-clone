@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using UnityEditor;
 
 public class MergeManager : MonoBehaviour
 {
@@ -49,6 +50,8 @@ public class MergeManager : MonoBehaviour
         leftPlayer.CurrentState = PlayerState.Merging;
         centerPlayer.CurrentState = PlayerState.Merging;
         rightPlayer.CurrentState = PlayerState.Merging;
+        
+        Invoke(nameof(PlayMergeSound), 0.5f);
 
         // Lift all three up slightly
         Sequence seq = DOTween.Sequence();
@@ -74,15 +77,17 @@ public class MergeManager : MonoBehaviour
         {
             int totalAmmo = leftPlayer.AmmoCount + rightPlayer.AmmoCount;
             centerPlayer.UpdateAmmoCount(totalAmmo);
-            centerPlayer.CurrentState = PlayerState.ReadyToShoot;
+            
+            leftPlayer.Shooter.Release();
+            rightPlayer.Shooter.Release();
+            centerPlayer.Shooter.Release();
+
+            //EditorApplication.isPaused = true;
 
             // Optionally play merge FX / SFX
             //centerPlayer.PlayMergeFX();
 
             // Destroy or disable left and right players
-            leftPlayer.Shooter.Release();
-            rightPlayer.Shooter.Release();
-            centerPlayer.Shooter.Release();
             
             Destroy(leftPlayer.gameObject);
             Destroy(rightPlayer.gameObject);
@@ -100,5 +105,15 @@ public class MergeManager : MonoBehaviour
         });
 
         seq.Play();
+    }
+
+    private void PlayMergeSound()
+    {
+        SoundManager.Instance.PlayMergeSound();
+    }
+
+    private void OnDestroy()
+    {
+        CancelInvoke();
     }
 }

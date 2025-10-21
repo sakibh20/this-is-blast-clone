@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerShooter : MonoBehaviour
@@ -74,6 +75,8 @@ public class PlayerShooter : MonoBehaviour
 
     public void StopShooting()
     {
+        CancelInvoke();
+        Debug.Log($"targets count: {_allTargets.Count}");
         StopAllCoroutines();
         transform.DOKill();
     }

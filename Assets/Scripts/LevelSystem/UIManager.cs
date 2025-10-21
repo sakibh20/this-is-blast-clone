@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [Header("HUD Elements")]
     [SerializeField] private GameObject settings;
     [SerializeField] private GameObject levelProgress;
+    [SerializeField] private GameObject bottomPanel;
     
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private GameObject youWinText;
@@ -59,11 +60,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        
-    }
-
     [ContextMenu("ShowGameUi")]
     public void ShowGameUi()
     {
@@ -71,6 +67,7 @@ public class UIManager : MonoBehaviour
         
         settings.gameObject.SetActive(true);
         levelProgress.gameObject.SetActive(true);
+        bottomPanel.gameObject.SetActive(true);
         buttons.localScale = Vector3.zero;
     }
 
@@ -96,6 +93,7 @@ public class UIManager : MonoBehaviour
         
         settings.gameObject.SetActive(false);
         levelProgress.gameObject.SetActive(false);
+        bottomPanel.gameObject.SetActive(false);
         
         mainPanel.alpha = 0f;
         mainPanel.interactable = true;
@@ -162,33 +160,31 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < coinIcons.Length; i++)
         {
             RectTransform coin = coinIcons[i];
-
-            // --- Reset state ---
-            coin.DOKill(); // stop any existing tweens
+            
+            coin.DOKill();
             coin.localScale = Vector3.zero;
             coin.localPosition = _coinInitialPos[i];
             coin.gameObject.SetActive(true);
-
-            // --- Sequence setup ---
+            
             Sequence seq = DOTween.Sequence();
 
-            // 1️⃣ Small stagger delay between coins
+            //Small stagger delay between coins
             seq.AppendInterval(i * coinTweenDelay);
 
-            // 2️⃣ Scale in & float a bit
+            //Scale in & float a bit
             seq.Append(coin.DOScale(_coinInitialScale[i], 0.35f).SetEase(Ease.OutBack));
             seq.Join(coin.DOLocalMoveY(
                 coin.localPosition.y + Random.Range(coinFloatStrength * 0.5f, coinFloatStrength),
                 0.4f
             ).SetLoops(2, LoopType.Yoyo).SetEase(Ease.InOutSine));
 
-            // 3️⃣ Idle pause
+            //Idle pause
             seq.AppendInterval(0.5f);
 
-            // 4️⃣ Fly to HUD target
+            // Fly to HUD target
             seq.Append(coin.DOMove(hudCoinTarget.transform.position, coinMoveDuration).SetEase(Ease.InBack));
 
-            // 5️⃣ Scale out while flying
+            //Scale out while flying
             seq.Append(coin.DOScale(Vector3.zero, coinMoveDuration * 0.1f).SetEase(Ease.InBack));
 
             seq.Play();
