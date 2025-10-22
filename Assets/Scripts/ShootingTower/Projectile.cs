@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using DG.Tweening;
 
@@ -7,7 +6,6 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private GameObject sphere;
     [SerializeField] private ParticleSystem _particleSystem;
-    //[SerializeField] private float lifeTime = 2f;
 
     [HideInInspector] public ObjectPool objectPool;
     

@@ -1,6 +1,4 @@
-using System;
 using DG.Tweening;
-using UnityEditor;
 using UnityEngine;
 
 public class ColorCube : MonoBehaviour
@@ -140,25 +138,6 @@ public class ColorCube : MonoBehaviour
                 UpdateVisibility();
             }).SetDelay(_hideDuration);
     }
-    
-    // public void MoveForwardWithDelay(float newZ)
-    // {
-    //     transform.DOKill();
-    //     Sequence seq = DOTween.Sequence();
-    //     
-    //     seq.Append(transform.DOMoveZ(newZ, 0.15f)
-    //         .SetEase(Ease.OutSine)
-    //         .OnComplete(() =>
-    //         {
-    //             pos.z = newZ;
-    //             UpdateVisibility();
-    //         }));
-    //     
-    //     // seq.Join(transform.DOLocalRotate(Vector3.zero, 0.15f, RotateMode.FastBeyond360)
-    //     //     .SetEase(Ease.OutQuad));
-    //
-    //     seq.SetDelay(_hideDuration);
-    // }
 }
 
 public enum CubeColors

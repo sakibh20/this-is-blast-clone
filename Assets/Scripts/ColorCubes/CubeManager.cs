@@ -156,7 +156,6 @@ public class CubeColumn
             .ToList();
     }
 
-    /// <summary>Move all cubes behind the destroyed cube forward using stored positions</summary>
     public void OnFrontCubeDestroyed(ColorCube destroyedCube)
     {
         if (cubes.Count == 0) return;

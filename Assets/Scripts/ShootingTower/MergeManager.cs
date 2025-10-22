@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
-using UnityEditor;
 using UnityEngine;
 
 public class MergeManager : MonoBehaviour
@@ -34,8 +33,6 @@ public class MergeManager : MonoBehaviour
 
     private void HandleMergesForColor(List<Doc> sameColorDocs)
     {
-        // Example: if we have 4 or 5 same color players, merge in sets of 3 that are closest together
-        // We’ll handle overlapping groups gracefully.
         List<List<Doc>> mergeSets = new List<List<Doc>>();
 
         int index = 0;
@@ -45,8 +42,7 @@ public class MergeManager : MonoBehaviour
             mergeSets.Add(sameColorDocs.Skip(index).Take(3).ToList());
             index += 3;
         }
-
-        // If leftover docs < 3, ignore them this round.
+        
         foreach (var mergeSet in mergeSets)
         {
             PerformMerge(mergeSet);

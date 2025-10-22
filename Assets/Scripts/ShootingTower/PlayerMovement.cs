@@ -28,10 +28,7 @@ public class PlayerMovement : MonoBehaviour
         SoundManager.Instance.PlayShooterPopSound();
         _player.CurrentState = PlayerState.Moving;
 
-        _moveTween?.Kill();
-        // _moveTween = transform.DOMove(target.position, moveDuration)
-        //     .SetEase(ease)
-        //     .OnComplete(OnReachedShootSpot);        
+        _moveTween?.Kill(); 
 
         _moveTween = transform.DOJump(
                 target.position,
@@ -45,13 +42,9 @@ public class PlayerMovement : MonoBehaviour
     
     public void MoveForward(Vector3 targetPos)
     {
-        //SoundManager.Instance.PlayShooterPopSound();
         _player.CurrentState = PlayerState.Moving;
 
-        _moveTween?.Kill();
-        // _moveTween = transform.DOMove(target.position, moveDuration)
-        //     .SetEase(ease)
-        //     .OnComplete(OnReachedShootSpot);        
+        _moveTween?.Kill();     
 
         _moveTween = transform.DOJump(
                 targetPos,
@@ -69,13 +62,13 @@ public class PlayerMovement : MonoBehaviour
         
         _player.TargetDoc.ReleaseDoc();
 
-        // 1️⃣ Find closest target
+        //Find closest target
         Transform target = (Vector3.Distance(transform.position, leftTarget.position) <
                             Vector3.Distance(transform.position, rightTarget.position))
             ? leftTarget
             : rightTarget;
 
-        // 2️⃣ Rotate towards target
+        //Rotate towards target
         Vector3 direction = target.position - transform.position;
         direction.y = 0f; // keep horizontal rotation
         Quaternion targetRotation = Quaternion.LookRotation(direction);
@@ -84,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
             .SetEase(Ease.OutQuad)
             .OnComplete(() =>
             {
-                // 3️⃣ Jump move to target with multiple jumps
+                //Jump move to target with multiple jumps
                 Sequence moveSeq = DOTween.Sequence();
 
                 moveSeq.Append(transform.DOJump(
@@ -94,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
                     moveOutDuration
                 ).SetEase(Ease.OutQuad));
 
-                // 4️⃣ Add subtle wobble during movement (Y rotation)
+                //Add subtle wobble during movement (Y rotation)
                 moveSeq.Join(transform.DOPunchRotation(
                     new Vector3(0f, Random.Range(-wobbleStrength, wobbleStrength), 0f),
                     moveOutDuration,
@@ -111,7 +104,5 @@ public class PlayerMovement : MonoBehaviour
     {
         _player.CurrentState = PlayerState.ReadyToShoot;
         _player.MergeManager.CheckForMerge();
-        //Debug.Log("OnReachedShootSpot!");
-        //
     }
 }
