@@ -59,3 +59,13 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+# IDE and per-user editor files
+.idea/
+.vscode/
+*.sln.DotSettings.user
+/[Uu]ser[Ss]ettings/
+
+# OS files
+.DS_Store
+Thumbs.db

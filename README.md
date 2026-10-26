@@ -55,7 +55,6 @@ Watch the gameplay demo on YouTube:
 
 ## 🧑‍💻 Author
 
-**Md Sakib Hasan**
-Senior Game Developer | Unity & C# Specialist
+**Md Sakib Hasan**, Unity developer in Tampere, Finland
 🌐 [Portfolio](https://mdsakibhasan.com)
 🔗 [LinkedIn](https://www.linkedin.com/in/skbsec/)
